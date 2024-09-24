@@ -34,19 +34,19 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             return await repositorio.Select();
         }
 
-        //get 1
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult<Reserva>> Get(int id)
-        {
-            Reserva? VariableAuxiliar = await repositorio.SelectById(id);
+        ////get 1
+        //[HttpGet("{id:int}")]
+        //public async Task<ActionResult<Reserva>> Get(int id)
+        //{
+        //    Reserva? VariableAuxiliar = await repositorio.SelectById(id);
 
-            if (VariableAuxiliar == null)
-            {
-                return NotFound();
-            }
+        //    if (VariableAuxiliar == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return VariableAuxiliar;
-        }
+        //    return VariableAuxiliar;
+        //}
 
         //get 2
         //[HttpGet("GetByCod/{cod}")]
@@ -71,7 +71,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         {
             return await repositorio.Existe(id);
         }
-            
+
 
 
         [HttpPost]
@@ -88,9 +88,9 @@ namespace Proyecto_LaGranSiete.Server.Controllers
                 //throw;
             }
         }
-                
 
-         
+
+
 
         [HttpPut("{id:int}")] //Api / Reservas
         public async Task<ActionResult> Put(int id, [FromBody] Reserva entidad)
@@ -110,7 +110,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
                 var Lean = await repositorio.Update(id, entidad);
 
-                if (!Lean )
+                if (!Lean)
                 {
                     return BadRequest("No se pudo actualizar la reserva");
                 }
@@ -120,7 +120,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             }
             catch (Exception e)
             {
-                
+
                 return BadRequest(e.Message);
                 //throw;
             }
@@ -129,16 +129,16 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         //Delete
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
-        {                                            
-           var resp = await repositorio.Borrar(id);
+        {
+            var resp = await repositorio.Borrar(id);
 
             if (!resp)
             {
                 return BadRequest("No se pudo eliminar la reserva");
             }
-           
 
-           return Ok();
+
+            return Ok();
         }
 
     }
