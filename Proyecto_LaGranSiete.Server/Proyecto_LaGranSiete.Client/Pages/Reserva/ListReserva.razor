@@ -1,0 +1,91 @@
+﻿@page "/Api/Reservas"
+@using Proyecto_LaGranSiete.Client.Servicios
+@inject IHTTPServicio http
+@using Proyecto_LaGranSiete.BD.Data.Entity
+
+@* titulo del menu de navegacion *@
+<h3 class="">Lista de reservas realizadas</h3>
+
+<table>
+
+   <tr>
+       <th class="text-warning bg-dark">Fecha y hora de la reserva</th>
+       <th class="text-warning bg-dark">Duración del alquiler</th>
+       <th class="text-warning bg-dark">Monto</th>
+       <th class="text-warning bg-dark">Método de pago</th>
+       <th class="text-warning bg-dark">Estado de la reserva</th>
+   </tr>
+
+  
+    @if (Mensaje == "")
+    {
+        @if (listaReserva == null)
+        {
+            <p>Buscando...</p>
+        }
+        else if(listaReserva.Count == 0)
+        {
+            <p>No existen reservas</p>
+        }
+        else
+        {
+            @foreach (var item in listaReserva)
+            {
+                <tr>
+                    <td>@item.FechaHoraReserva</td>
+                    <td>@item.DuracionAlquiler</td>
+                    <td>@item.Monto</td>
+                    <td>@item.MetodoPago</td>
+                    <td>@item.EstadoReserva</td> 
+                </tr>   
+            }
+        }
+    }
+    else
+    {
+        <p>Error @Mensaje</p>
+    }
+ 
+
+</table>
+
+               
+@code {
+
+    List<Reserva>? listaReserva;
+
+    string Mensaje = "";
+
+    protected override async Task OnInitializedAsync() //"Task" = Equivale a un "VOID"
+    {
+        await base.OnInitializedAsync(); //Evento que se produce cuando se inicializa la pagina web
+        await Leer();
+    }
+
+    private async Task Leer()
+    {
+        // var resp = await http.Get<List<Reserva>>("/Api/Reservas");
+
+        HTTPRespuesta<List<Reserva>> resp = 
+        await http.Get<List<Reserva>>("/Api/Reservas");
+
+        if (!resp.Error)
+        {
+            listaReserva = resp.Respuesta;
+        }
+        else
+        {
+            Mensaje = await resp.ObtenerError(); 
+        } 
+
+
+
+    }
+
+
+
+
+
+
+
+}
