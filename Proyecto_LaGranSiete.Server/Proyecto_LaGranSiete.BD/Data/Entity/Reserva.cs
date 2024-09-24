@@ -36,11 +36,11 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
 
         [Required(ErrorMessage = "El monto es obligatorio")]
-        public int Monto { get; set; }
+        public Decimal Monto { get; set; }
 
 
         [Required(ErrorMessage = "El método es obligatorio")]
-        public bool? MetodoPago { get; set; }
+        public string? MetodoPago { get; set; }
 
 
         [Required(ErrorMessage = "El estado de la reserva es obligatorio")]
