@@ -27,7 +27,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         //constructor
        
 
-        //EndPoint (Get)
+        //EndPoint (Get) (Para realizar una solicitud)
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get() //Task == "Tarea"
         {
@@ -65,7 +65,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
 
 
-
+        //EndPoint - Get (For ID), para buscar si existe
         [HttpGet("Existe/{id:int}")]
         public async Task<ActionResult<bool>> Existe(int id)
         {
@@ -73,7 +73,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         }
 
 
-
+        //EndPoint Post
         [HttpPost]
         public async Task<ActionResult<int>> Post(Reserva entidad)
         {
@@ -91,8 +91,8 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
 
 
-
-        [HttpPut("{id:int}")] //Api / Reservas
+        //EndPoint  - Put (actualizar)
+        [HttpPut("{id:int}")] 
         public async Task<ActionResult> Put(int id, [FromBody] Reserva entidad)
         {
             if (id == entidad.Id)
@@ -126,7 +126,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             }
         }
 
-        //Delete
+        //EndPoint - Delete
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
