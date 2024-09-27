@@ -17,7 +17,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     public class Reserva : EntityBase
     {
         //Clave primaria de la tabla Reservas
-        public int ReservaId { get; set; }
+        public int? ReservaId { get; set; }
 
         //----------------------------------------------------
         //Propiedades de la tabla
@@ -51,7 +51,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
 
         //Tabla de referencia con Reserva
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
         //public Usuario? Usuarios { get; set; }
 
        

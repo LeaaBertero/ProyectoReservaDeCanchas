@@ -3,52 +3,77 @@
 @inject IHTTPServicio http
 @using Proyecto_LaGranSiete.BD.Data.Entity
 
-@* titulo del menu de navegacion *@
-<h3 class="">Lista de reservas realizadas</h3>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<table>
+   
+    <title>La Gran Siete - Oficial Sitio Web</title>
+    
+    <body>
 
-   <tr>
-       <th class="text-warning bg-dark">Fecha y hora de la reserva</th>
-       <th class="text-warning bg-dark">Duración del alquiler</th>
-       <th class="text-warning bg-dark">Monto</th>
-       <th class="text-warning bg-dark">Método de pago</th>
-       <th class="text-warning bg-dark">Estado de la reserva</th>
-   </tr>
+        <header>
 
-  
-    @if (Mensaje == "")
-    {
-        @if (listaReserva == null)
-        {
-            <p>Buscando...</p>
-        }
-        else if(listaReserva.Count == 0)
-        {
-            <p>No existen reservas</p>
-        }
-        else
-        {
-            @foreach (var item in listaReserva)
-            {
+            <h1>La Gran Siete Página oficial</h1>
+
+            <p>Para realizar una reserva, complete los siguientes campos</p>
+
+
+        </header>
+      
+        <main>
+
+            <table>
+
                 <tr>
-                    <td>@item.FechaHoraReserva</td>
-                    <td>@item.DuracionAlquiler</td>
-                    <td>@item.Monto</td>
-                    <td>@item.MetodoPago</td>
-                    <td>@item.EstadoReserva</td> 
-                </tr>   
-            }
-        }
-    }
-    else
-    {
-        <p>Error @Mensaje</p>
-    }
- 
+                    <th class="text-warning bg-dark">Fecha y hora de la reserva</th>
+                    <th class="text-warning bg-dark">Duración del alquiler</th>
+                    <th class="text-warning bg-dark">Monto</th>
+                    <th class="text-warning bg-dark">Método de pago</th>
+                    <th class="text-warning bg-dark">Estado de la reserva</th>
+                </tr>
 
-</table>
 
+                @if (Mensaje == "")
+                {
+                    @if (listaReserva == null)
+                    {
+                        <p>Buscando reservas...</p>
+                    }
+                    else if (listaReserva.Count == 0)
+                    {
+                        <p>No existen reservas realizadas</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in listaReserva)
+                        {
+                            <tr>
+                                <td>@item.FechaHoraReserva</td>
+                                <td>@item.DuracionAlquiler</td>
+                                <td>@item.Monto</td>
+                                <td>@item.MetodoPago</td>
+                                <td>@item.EstadoReserva</td>
+                            </tr>
+                        }
+                    }
+                }
+                else
+                {
+                    <p>Error @Mensaje</p>
+                }
+
+
+            </table>
+
+        </main>
+  
+        <footer>
+
+        </footer>
+    
+    </body>
+
+</html>
+        
                
 @code {
 
@@ -77,15 +102,15 @@
         {
             Mensaje = await resp.ObtenerError(); 
         } 
-
-
-
     }
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+

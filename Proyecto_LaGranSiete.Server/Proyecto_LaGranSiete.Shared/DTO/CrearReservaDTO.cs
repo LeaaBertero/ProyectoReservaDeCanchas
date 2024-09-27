@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace Proyecto_LaGranSiete.Shared.DTO
 {
+    //Reserva Objeto de transferencia de datos
     public class CrearReservaDTO
     {
+        //Que son los DTO = utilizado para transferir datos entre diferentes capas de una aplicación o entre distintos sistemas.
+        //Su principal propósito es agrupar datos y pasarlos de manera eficiente, a menudo desde la capa de datos
+        //(como la base de datos) a la capa de presentación
+        //(como la interfaz de usuario) o entre un cliente y un servidor en una aplicación web.
+
         [Required(ErrorMessage = "La fecha y hora obligatoria")]
         [MaxLength(20, ErrorMessage = "Máximo número de caracteres {1}")]
         public DateTime FechaHoraReserva { get; set; }
