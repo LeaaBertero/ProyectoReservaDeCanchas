@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Proyecto_LaGranSiete.Shared\Proyecto_LaGranSiete.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Reserva\ImgPageReserva\" />
+  </ItemGroup>
+
 </Project>
