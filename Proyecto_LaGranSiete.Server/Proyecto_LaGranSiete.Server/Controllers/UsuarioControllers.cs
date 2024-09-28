@@ -24,6 +24,20 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             return await context.Usuarios.ToListAsync();
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<Usuario>> Get(int id)
+        {
+            var lean = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (lean == null)
+            {
+                return NotFound();
+            }
+            return Ok(lean);
+
+            //return lean;
+        }
+
         [HttpPost]
         public async Task<ActionResult<int>> Post(Usuario entidad)
         {
