@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_LaGranSiete.BD.Data;
 using Proyecto_LaGranSiete.BD.Data.Entity;
+using Proyecto_LaGranSiete.Server.Repositorio;
 
 namespace Proyecto_LaGranSiete.Server.Controllers
 {
@@ -78,6 +79,26 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
             return Ok();
         }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id) 
+        {
+            var existe = await context.Usuarios.AnyAsync(x =>x.Id == id);
+
+            if (!existe)
+            {
+                return NotFound($"El usuario {id} que se intenta borrar, no existe.");
+            }
+
+            Usuario entidadBorrar = new Usuario();
+            entidadBorrar.Id = id;  
+
+            context.Remove(entidadBorrar);
+            await context.SaveChangesAsync();
+            return Ok();
+
+        }
+       
 
     }
 
