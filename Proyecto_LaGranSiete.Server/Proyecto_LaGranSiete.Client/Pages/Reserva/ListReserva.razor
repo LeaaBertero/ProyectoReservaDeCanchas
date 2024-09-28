@@ -9,8 +9,7 @@
     <head>
         <title>La Gran Siete - Oficial Sitio Web</title>
 
-        @* elace de css *@
-        <link href="#" rel="stylesheet" />    
+     
 
     </head>
 
@@ -38,9 +37,27 @@
                 Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar. ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
                 </h2>
             
-            </section>
+            </section>  
+           
 
-            <p>Para realizar una reserva, complete los siguientes campos</p>
+            <section>
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="https://mas10.ar/wp-content/uploads/2023/10/cesped-1024x682.webp" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+                
+            <br />
+            <p class="text-center font-weit: fw-bolder text-light bg-dark text-uppercase">Para realizar una reserva, complete los siguientes campos</p>
+            
+
+
+
             <table>
 
                 <tr>
@@ -56,7 +73,7 @@
                 {
                     @if (listaReserva == null)
                     {
-                        <p>Buscando reservas...</p>
+                        <p>Buscando lista de reservas...</p>
                     }
                     else if (listaReserva.Count == 0)
                     {
