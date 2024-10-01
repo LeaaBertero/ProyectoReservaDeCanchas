@@ -1,9 +1,11 @@
 ﻿@page "/apiListReserva/Crear"
 @inject IHTTPServicio http
 @inject NavigationManager navigationManager
+    
+<h3>Nueva Reserva</h3>
 
-    @* fecha y hora de la reserva *@
-    <EditForm Model="reserva" OnValidSubmit="Grabar">
+  
+  @*   <EditForm Model="reserva" OnValidSubmit="Grabar">
         
         <DataAnnotationsValidator/>
 
@@ -18,12 +20,12 @@
                
         </div>
 
-    </EditForm>
+    </EditForm> *@
 
-     @* fecha y hora de la reserva *@
-    <EditForm Model="reserva" OnValidSubmit="Grabar">
+    
+  @*   <EditForm Model="reserva" OnValidSubmit="Grabar">
         
-        <DataAnnotationsValidator />
+        <DataAnnotationsValidator/>
 
         <div class="form-group">   
            
@@ -38,26 +40,22 @@
         <br />
         <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
         <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
-    </EditForm>
+    </EditForm> *@
               
 
-            
-
-
-
-
-        
-            
-
-
-<h3>Nueva Reserva</h3>
-
 @code {
+
     private Reserva reserva = new Reserva();
 
     private async Task Grabar()
     {
+        var httpRespuesta = await http.Post<Reserva>("Api/Reservas", reserva);
 
+        if (httpRespuesta.Error)
+        {
+            var body = httpRespuesta.HttpResponseMessage;
+        }
+        navigationManager.NavigateTo("/Api/Reservas");
     }
 
     private void Cancelar()
@@ -65,3 +63,10 @@
         navigationManager.NavigateTo("/Api/Reservas");
     }
 }
+            
+
+
+
+
+     
+
