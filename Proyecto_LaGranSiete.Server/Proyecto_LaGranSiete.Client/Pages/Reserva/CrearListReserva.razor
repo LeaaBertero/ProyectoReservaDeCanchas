@@ -5,34 +5,36 @@
 <h3>Nueva Reserva</h3>
 
   
-  @*   <EditForm Model="reserva" OnValidSubmit="Grabar">
+    <EditForm Model="reserva" OnValidSubmit="Grabar">
         
-        <DataAnnotationsValidator/>
+        <DataAnnotationsValidator />
 
         <div class="form-group">   
            
             <label>Fecha y Hora de Reserva</label>
             
             <div>
-                <inputText class="form-control" @bind-value="@reserva.FechaHoraReserva"/>
+                <inputText class="form-control" @bind-Value="@reserva.FechaHoraReserva"/>
                 <ValidationMessage For="@(() => reserva.FechaHoraReserva )"/>
             </div>
                
         </div>
 
-    </EditForm> *@
+    </EditForm>
+
+
 
     
-  @*   <EditForm Model="reserva" OnValidSubmit="Grabar">
+    <EditForm Model="reserva" OnValidSubmit="Grabar">
         
-        <DataAnnotationsValidator/>
+        <DataAnnotationsValidator />
 
         <div class="form-group">   
            
             <label>Duración del Alquiler</label>
             
             <div>
-                <inputText class="form-control" @bind-value="@reserva.DuracionAlquiler"/>
+                <inputText class="form-control" @bind-Value="@reserva.DuracionAlquiler"/>
                 <ValidationMessage For="@(() => reserva.DuracionAlquiler )"/>
             </div>
                
@@ -40,7 +42,65 @@
         <br />
         <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
         <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
-    </EditForm> *@
+    </EditForm>
+
+
+
+    <EditForm Model="reserva" OnValidSubmit="Grabar">
+        
+    <DataAnnotationsValidator />
+
+    <div class="form-group">   
+           
+        <label>Duración del Alquiler</label>
+            
+        <div>
+            <inputText class="form-control" @bind-Value="@reserva.Monto"/>
+            <ValidationMessage For="@(() => reserva.Monto )" />
+        </div>
+               
+    </div>
+    <br />
+    <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
+    <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
+</EditForm>
+
+
+
+
+ <EditForm Model="reserva" OnValidSubmit="Grabar">
+        
+        <DataAnnotationsValidator />
+
+        <div class="form-group">   
+           
+            <label>Fecha y Hora de Reserva</label>
+            
+            <div>
+                <inputText class="form-control" @bind-Value="@reserva.MetodoPago"/>
+            <ValidationMessage For="@(() => reserva.MetodoPago )" />
+            </div>
+               
+        </div>
+
+ </EditForm>
+
+  <EditForm Model="reserva" OnValidSubmit="Grabar">
+        
+        <DataAnnotationsValidator />
+
+        <div class="form-group">   
+           
+            <label>Fecha y Hora de Reserva</label>
+            
+            <div>
+                <inputText class="form-control" @bind-Value="@reserva.EstadoReserva"/>
+            <ValidationMessage For="@(() => reserva.EstadoReserva )" />
+            </div>
+               
+        </div>
+
+    </EditForm>
               
 
 @code {
