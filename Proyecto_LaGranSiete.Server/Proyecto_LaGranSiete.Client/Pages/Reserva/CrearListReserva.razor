@@ -1,6 +1,67 @@
 ﻿@page "/apiListReserva/Crear"
-<h3>CrearListReserva</h3>
+@inject IHTTPServicio http
+@inject NavigationManager navigationManager
+
+    @* fecha y hora de la reserva *@
+    <EditForm Model="reserva" OnValidSubmit="Grabar">
+        
+        <DataAnnotationsValidator/>
+
+        <div class="form-group">   
+           
+            <label>Fecha y Hora de Reserva</label>
+            
+            <div>
+                <inputText class="form-control" @bind-value="@reserva.FechaHoraReserva"/>
+                <ValidationMessage For="@(() => reserva.FechaHoraReserva )"/>
+            </div>
+               
+        </div>
+
+    </EditForm>
+
+     @* fecha y hora de la reserva *@
+    <EditForm Model="reserva" OnValidSubmit="Grabar">
+        
+        <DataAnnotationsValidator />
+
+        <div class="form-group">   
+           
+            <label>Duración del Alquiler</label>
+            
+            <div>
+                <inputText class="form-control" @bind-value="@reserva.DuracionAlquiler"/>
+                <ValidationMessage For="@(() => reserva.DuracionAlquiler )"/>
+            </div>
+               
+        </div>
+        <br />
+        <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
+        <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
+    </EditForm>
+              
+
+            
+
+
+
+
+        
+            
+
+
+<h3>Nueva Reserva</h3>
 
 @code {
+    private Reserva reserva = new Reserva();
 
+    private async Task Grabar()
+    {
+
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Api/Reservas");
+    }
 }
