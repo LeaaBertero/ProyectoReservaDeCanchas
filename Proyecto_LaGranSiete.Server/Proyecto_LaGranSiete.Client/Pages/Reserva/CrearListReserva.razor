@@ -14,7 +14,7 @@
             <label>Fecha y Hora de Reserva</label>
             
             <div>
-            <input type="datetime" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+            <input type="week" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
                 <ValidationMessage For="@(() => reserva.FechaHoraReserva )"/>
             </div>
                
@@ -70,7 +70,7 @@
 
     <div class="form-group">
 
-        <label>Metodo Pago</label>
+        <label>Método Pago</label>
 
         <div>
             <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
@@ -101,7 +101,7 @@
 <br />
 
 <div>
-    <input class="btn btn-danger" type="submit" value="Reservar">
+    <input class="btn btn-success" type="submit" value="Reservar">
 </div>
 
 
