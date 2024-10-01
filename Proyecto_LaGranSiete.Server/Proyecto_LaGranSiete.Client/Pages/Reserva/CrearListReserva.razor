@@ -14,7 +14,7 @@
             <label>Fecha y Hora de Reserva</label>
             
             <div>
-                <inputText class="form-control" @bind-Value="@reserva.FechaHoraReserva"/>
+            <input type="datetime" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
                 <ValidationMessage For="@(() => reserva.FechaHoraReserva )"/>
             </div>
                
@@ -25,7 +25,7 @@
 
 
     
-    <EditForm Model="reserva" OnValidSubmit="Grabar">
+ @*    <EditForm Model="reserva" OnValidSubmit="Grabar">
         
         <DataAnnotationsValidator />
 
@@ -42,33 +42,34 @@
         <br />
         <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
         <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
-    </EditForm>
+    </EditForm> *@
 
 
 
-    <EditForm Model="reserva" OnValidSubmit="Grabar">
+@* <EditForm Model="reserva" OnValidSubmit="Grabar">
         
     <DataAnnotationsValidator />
 
-    <div class="form-group">   
+        <div class="form-group">   
            
-        <label>Duración del Alquiler</label>
+            <label>Duración del Alquiler</label>
             
-        <div>
-            <inputText class="form-control" @bind-Value="@reserva.Monto"/>
-            <ValidationMessage For="@(() => reserva.Monto )" />
-        </div>
+            <div>
+                <inputText class="form-control" @bind-Value="@reserva.Monto"/>
+                <ValidationMessage For="@(() => reserva.Monto )" />
+            </div>
                
-    </div>
+        </div>
     <br />
     <button class="btn btn-primary" type="submit">Reservá ahora !!</button>
     <button class="btn btn-secondary" onclick="Cancelar">Cancelar</button>
-</EditForm>
+
+</EditForm> *@
 
 
 
 
- <EditForm Model="reserva" OnValidSubmit="Grabar">
+@*  <EditForm Model="reserva" OnValidSubmit="Grabar">
         
         <DataAnnotationsValidator />
 
@@ -83,8 +84,8 @@
                
         </div>
 
- </EditForm>
-
+ </EditForm> *@
+@* 
   <EditForm Model="reserva" OnValidSubmit="Grabar">
         
         <DataAnnotationsValidator />
@@ -100,7 +101,7 @@
                
         </div>
 
-    </EditForm>
+    </EditForm> *@
               
 
 @code {
