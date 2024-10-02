@@ -9,15 +9,14 @@
     <head>
         <title>La Gran Siete - Oficial Sitio Web</title>
 
-     
-
     </head>
+     
 
     <body class="p-3 mb-2 bg-warning text-dark">
 
         <header>
 
-            <h1 class="p-3 mb-2 bg-success text-white text-center">La Gran Siete Página oficial</h1>
+            <h1 class="text-center">La Gran Siete Página oficial</h1>
 
             
 
@@ -92,25 +91,36 @@
                         @foreach (var item in listaReserva)
                         {
                             <tr>
+
                                 <td>@item.FechaHoraReserva</td>
                                 <td>@item.DuracionAlquiler</td>
                                 <td>@item.Monto</td>
                                 <td>@item.MetodoPago</td>
                                 <td>@item.EstadoReserva</td>
+
+                                <td>
+                                    <a class="btn btn-primary" href="/Api/Reserva/Editar/@item.Id">Editar</a>
+                                </td>
+                               
+
                             </tr>
+
+                           
                         }
+                    
                     }
+                
                 }
                 else
                 {
-                    <p>Error @Mensaje</p>
+                    <p>Error: @Mensaje</p>
                 }
 
 
             </table>
 
             <div>
-                <a class="btn btn-primary" href="/apiListReserva/Crear">Nueva Reserva</a>
+                <a class="btn btn-primary" href="/Api/ListReserva/Crear">Nueva Reserva</a>
             </div>
 
 

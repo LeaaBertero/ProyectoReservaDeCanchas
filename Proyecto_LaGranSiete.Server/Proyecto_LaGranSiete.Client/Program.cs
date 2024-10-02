@@ -11,3 +11,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<IHTTPServicio, HTTPServicio>(); //inyeccion de interfaz con la clase programada del servicio HTTP
 await builder.Build().RunAsync();
+
+
+
+
