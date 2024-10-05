@@ -1,4 +1,4 @@
-﻿@page "/Api/Reservas/Editar/{ReservaId:int}"
+﻿@page "/Api/Reservas/Editar/{ReservaId}"
 @inject IHTTPServicio http
 @inject NavigationManager navigationManager
 
@@ -121,6 +121,8 @@
         
             <footer>
 
+               
+
             </footer>
     
         </body>
@@ -142,7 +144,7 @@
 
     private async Task Mostrar()
     {
-        var respuesta = await http.Get<Reserva>($"api/TDocumentos/{reserva}");
+        var respuesta = await http.Get<Reserva>($"Api/Reservas/{reserva}");
 
         if (!respuesta.Error)
         {
@@ -150,7 +152,7 @@
         }
         else
         {
-            navigationManager.NavigateTo("/api/TDocumentos");
+            navigationManager.NavigateTo("/Api/Reservas");
         }
     }
 

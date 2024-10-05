@@ -12,7 +12,7 @@ namespace Proyecto_LaGranSiete.Client.Servicios
         //constructor
         public HTTPServicio(HttpClient http) //<-- inyección de dependencia
         {
-            this.http = http;
+            this.http = http;   
         }
 
         public async Task<HTTPRespuesta<T>> Get<T>(string url)

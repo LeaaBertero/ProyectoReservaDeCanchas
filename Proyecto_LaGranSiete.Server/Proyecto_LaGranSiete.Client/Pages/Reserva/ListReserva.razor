@@ -8,8 +8,8 @@
    
     <head>
         <title>La Gran Siete - Oficial Sitio Web</title>
-
     </head>
+
      
 
     <body class="p-3 mb-2 bg-warning text-dark">
@@ -90,6 +90,7 @@
                     {
                         @foreach (var item in listaReserva)
                         {
+                            @* lista de los atributos de la tabla *@
                             <tr>
 
                                 <td>@item.FechaHoraReserva</td>
@@ -98,13 +99,15 @@
                                 <td>@item.MetodoPago</td>
                                 <td>@item.EstadoReserva</td>
 
+                                @* boton de editar reserva *@
                                 <td>
-                                    <a class="btn btn-primary" href="/Api/Reserva/Editar/@item.Id">Editar</a>
+                                    <a class="btn btn-primary" 
+                                    href="/Api/Reserva/Editar/@item.Id">Editar</a>
                                 </td>
                                
 
                             </tr>
-
+                                
                            
                         }
                     

@@ -54,6 +54,9 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         public int? UsuarioId { get; set; }
         //public Usuario? Usuarios { get; set; }
 
+        //Lista de reservas que lo usuarios realizaron
+        public List<Reserva> Reservas { get; set; }
+
        
         //public int EquipoUnoId { get; set; }
         //public EquipoUno? EquipoUno { get; set; }
