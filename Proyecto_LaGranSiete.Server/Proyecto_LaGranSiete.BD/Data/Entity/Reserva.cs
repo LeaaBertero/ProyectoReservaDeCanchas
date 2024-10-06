@@ -57,29 +57,29 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //Lista de reservas que lo usuarios realizaron
         public List<Reserva> Reservas { get; set; }
 
-       
+
         //public int EquipoUnoId { get; set; }
         //public EquipoUno? EquipoUno { get; set; }
-        
-        
+
+
         //public int EquipoDosId { get; set; }
         //public EquipoDos? EquipoDos { get; set; }
 
-      
+
         //public int PartidoId { get; set; }
         //public Partido? Partidos { get; set; }
 
-       
+
         //public int PagoId { get; set; }
         //public Pago? Pagos { get; set; }
 
-       
+
         //public int EquipoId { get; set; }
         //public Equipo? Equipos { get; set; }
 
         //Lista de las reservas realizadas por los usuarios
         //public List<Reserva> Reservas { get; set; } = new List<Reserva>();
-        //public List<Usuario> Usuario { get; set; } = new List<Usuario>();
+        //public List<Usuario> Usuarios { get; set; } = new List<Usuario>();
     }
 }
 

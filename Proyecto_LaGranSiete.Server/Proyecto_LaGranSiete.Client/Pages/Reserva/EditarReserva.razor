@@ -1,34 +1,37 @@
-﻿@page "/Api/Reservas/Editar/{ReservaId:int}"
+﻿@page "/Api/Reservas/Editar/{ReservasId:int}"
 @inject IHTTPServicio http
 @inject NavigationManager navigationManager
+
+
 
 <!DOCTYPE html>
 
     <html>
 
         <head>
-            <title>Editar Reserva</title>
+            <title>Modificar reserva</title>
         </head>
 
         <body>
 
             <header>
                 <h1>Editar Reserva</h1>
+               @*  <h2>@pepe</h2> *@
             </header>
         
             <main>
 
-                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
 
-                    <DataAnnotationsValidator />
+                    <DataAnnotationsValidator/>
 
                     <div class="form-group">
 
                         <label>Fecha y Hora de Reserva</label>
 
                         <div>
-                            <input type="week" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
-                            <ValidationMessage For="@(() => reserva.FechaHoraReserva )" />
+                            <input type="week" class="form-control" @bind-value="@Reserva.FechaHoraReserva" />
+                            <ValidationMessage For="@(() => Reserva.FechaHoraReserva )" />
                         </div>
 
                     </div>
@@ -38,7 +41,7 @@
 
 
 
-                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
 
                     <DataAnnotationsValidator />
 
@@ -47,8 +50,8 @@
                         <label>Duración del alquiler</label>
 
                         <div>
-                            <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
-                            <ValidationMessage For="@(() => reserva.DuracionAlquiler )" />
+                            <input type="number" class="form-control" @bind-value="@Reserva.DuracionAlquiler" />
+                            <ValidationMessage For="@(() => Reserva.DuracionAlquiler )" />
                         </div>
 
                     </div>
@@ -57,7 +60,7 @@
 
 
 
-                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
 
                     <DataAnnotationsValidator />
 
@@ -66,8 +69,8 @@
                         <label>Monto o precio</label>
 
                         <div>
-                            <input type="number" class="form-control" @bind-value="@reserva.Monto" />
-                            <ValidationMessage For="@(() => reserva.Monto )" />
+                            <input type="number" class="form-control" @bind-value="@Reserva.Monto" />
+                            <ValidationMessage For="@(() => Reserva.Monto )" />
                         </div>
 
                     </div>
@@ -77,7 +80,7 @@
 
 
 
-                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
 
                     <DataAnnotationsValidator />
 
@@ -86,15 +89,15 @@
                         <label>Método Pago</label>
 
                         <div>
-                            <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
-                            <ValidationMessage For="@(() => reserva.MetodoPago )" />
+                            <input type="text" class="form-control" @bind-value="@Reserva.MetodoPago" />
+                            <ValidationMessage For="@(() => Reserva.MetodoPago )" />
                         </div>
 
                     </div>
 
                 </EditForm>
 
-                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
 
                     <DataAnnotationsValidator />
 
@@ -103,8 +106,8 @@
                         <label>Estado de la reserva</label>
 
                         <div>
-                            <input type="text" class="form-control" @bind-value="@reserva.EstadoReserva" />
-                            <ValidationMessage For="@(() => reserva.EstadoReserva )" />
+                            <input type="text" class="form-control" @bind-value="@Reserva.EstadoReserva" />
+                            <ValidationMessage For="@(() => Reserva.EstadoReserva )" />
                         </div>
 
                     </div>
@@ -121,7 +124,7 @@
         
             <footer>
 
-               
+               <p>Todos los derechos reservados</p>
 
             </footer>
     
@@ -132,9 +135,53 @@
 
 @code {
 
-    [Parameter] public int ReservasId { get; set; }
-    private Reserva reserva = new Reserva();
+    // [Parameter] public int ReservasId { get; set; }
+    // private Reserva reserva = new Reserva();
 
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     await base.OnInitializedAsync();
+    //     await Mostrar();
+    // }
+
+    // private async Task Mostrar()
+    // {
+    //     var respuesta = await http.Get<Reserva>($"Api/Reservas/{reserva}");
+
+    //     if (!respuesta.Error)
+    //     {
+    //         reserva = respuesta.Respuesta;
+    //     }
+    //     else
+    //     {
+    //         navigationManager.NavigateTo("/Api/Reservas");
+    //     }
+    // }
+
+
+    // private async Task Grabar()
+    // {
+    //     var httpRespuesta = await http.Put<Reserva>("Api/Reservas", reserva);
+
+    //     if (httpRespuesta.Error)
+    //     {
+    //         var body = httpRespuesta.HttpResponseMessage;
+    //     }
+    //     navigationManager.NavigateTo("/Api/Reservas");
+    // }
+
+    // private void Cancelar()
+    // {
+    //     navigationManager.NavigateTo("/Api/Reservas");
+    // }
+
+
+
+    [Parameter] public int ReservaId { get; set; }
+    private Reserva Reserva = new Reserva();
+
+    // string pepe = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -144,11 +191,11 @@
 
     private async Task Mostrar()
     {
-        var respuesta = await http.Get<Reserva>($"Api/Reservas/{reserva}");
+        var respuesta = await http.Get<Reserva>($"Api/Reservas/{ReservaId}");
 
         if (!respuesta.Error)
         {
-            reserva = respuesta.Respuesta;
+            Reserva = respuesta.Respuesta;
         }
         else
         {
@@ -157,10 +204,13 @@
     }
 
 
+
     private async Task Grabar()
     {
-        var httpRespuesta = await http.Put<Reserva>("Api/Reservas", reserva);
 
+        // pepe = ReservaId.ToString();
+
+        var httpRespuesta = await http.Put<Reserva>($"Api/Reservas/{ReservaId}", Reserva);
         if (httpRespuesta.Error)
         {
             var body = httpRespuesta.HttpResponseMessage;

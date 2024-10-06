@@ -93,7 +93,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
         //EndPoint  - Put (actualizar)
         [HttpPut("{id:int}")] 
-        public async Task<ActionResult> Put(int id, [FromBody] Reserva entidad)
+        public async Task<ActionResult<bool>> Put(int id, [FromBody] Reserva entidad)
         {
             if (id == entidad.Id)
             {
@@ -115,7 +115,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
                     return BadRequest("No se pudo actualizar la reserva");
                 }
 
-                return Ok();
+                return Lean;
 
             }
             catch (Exception e)
