@@ -62,8 +62,8 @@ namespace Proyecto_LaGranSiete.Client.Servicios
             var response = await http.PutAsync(url, enviarContent);
             if (response.IsSuccessStatusCode)
             {
-                var respuesta = await DesSerializar<object>(response);
-                return new HTTPRespuesta<object>(respuesta, false, response);
+                //var respuesta = await DesSerializar<object>(response);
+                return new HTTPRespuesta<object>(null, false, response);
             }
             else
             {
@@ -77,7 +77,9 @@ namespace Proyecto_LaGranSiete.Client.Servicios
 
             return JsonSerializer.Deserialize<T>(respuestaStr,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
-
         }
     }
 }
+          
+
+
