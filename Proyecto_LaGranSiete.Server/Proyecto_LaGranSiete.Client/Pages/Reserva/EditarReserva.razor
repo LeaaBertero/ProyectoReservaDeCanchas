@@ -209,7 +209,7 @@
     {
 
         // pepe = ReservaId.ToString();
-
+    
         var httpRespuesta = await http.Put<Reserva>($"Api/Reservas/{ReservaId}", Reserva);
         if (httpRespuesta.Error)
         {

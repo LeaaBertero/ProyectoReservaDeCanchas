@@ -79,7 +79,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         //Lista de las reservas realizadas por los usuarios
         //public List<Reserva> Reservas { get; set; } = new List<Reserva>();
-        //public List<Usuario> Usuarios { get; set; } = new List<Usuario>();
+       
     }
 }
 
