@@ -94,24 +94,24 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             return Ok();
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<ActionResult> Delete(int id) 
-        {
-            var existe = await context.Usuarios.AnyAsync(x =>x.Id == id);
+        //[HttpDelete("{id:int}")]
+        //public async Task<ActionResult> Delete(int id) 
+        //{
+        //    var existe = await context.Usuarios.AnyAsync(x =>x.Id == id);
 
-            if (!existe)
-            {
-                return NotFound($"El usuario {id} que se intenta borrar, no existe.");
-            }
+        //    if (!existe)
+        //    {
+        //        return NotFound($"El usuario {id} que se intenta borrar, no existe.");
+        //    }
 
-            Usuario entidadBorrar = new Usuario();
-            entidadBorrar.Id = id;  
+        //    Usuario entidadBorrar = new Usuario();
+        //    entidadBorrar.Id = id;  
 
-            context.Remove(entidadBorrar);
-            await context.SaveChangesAsync();
-            return Ok();
+        //    context.Remove(entidadBorrar);
+        //    await context.SaveChangesAsync();
+        //    return Ok();
 
-        }
+        //}
        
 
     }

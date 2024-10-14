@@ -101,14 +101,14 @@
 
                                 @* boton de editar reserva *@
                                 <td>
-                                    <a class="btn btn-primary" 
-                                    href="/Api/Reserva/Editar/@item.Id">Editar</a>
+                                    <a class="btn btn-light" 
+                                    href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
                                 </td>
 
                                 <td>
                                     <button class="btn btn-danger"
                                             @onclick="()=>Eliminar(item)">
-                                        Borrar
+                                        Eliminar reserva
                                     </button>
                                 </td>
                                
@@ -129,10 +129,43 @@
 
             </table>
 
+            
+
             <div>
+                <img src="https://cdn.pixabay.com/photo/2020/02/01/15/50/ball-4810612_1280.jpg" alt="Imagen de futbol" />
                 <a class="btn btn-primary" href="/Api/ListReserva/Crear">Nueva Reserva</a>
             </div>
 
+            @* aca va el codigo de conformacion de la etiqueta de confirmacion *@
+
+            <Confirmacion @ref="confirmacion"
+                onCancel="Cancelar" @onConfirm="Borrar">
+                <h5>Esta por borrar la reserva, desea continuar@*  @reserva.FechaHoraReserva *@</h5>
+                <p>Está seguro?</p>
+            </Confirmacion>
+            
+            
+            <Confirmacion @ref="confirmacion"
+                onCancel="Cancelar" @onConfirm="Borrar">
+                <h5>Está por borrar duración del alquiler?, desea continuar @* @reserva.DuracionAlquiler *@</h5>
+                <p>Está seguro?</p>
+            </Confirmacion>     
+            
+            <Confirmacion @ref="confirmacion"
+                onCancel="Cancelar" @onConfirm="Borrar">
+                <h5>Está por borrar duración del alquiler?, desea continuar @* @reserva.Monto *@</h5>
+                <p>Está seguro?</p>
+            </Confirmacion> 
+            
+            <Confirmacion @ref="confirmacion"
+                onCancel="Cancelar" @onConfirm="Borrar">
+                <h5>Esta por borrar la reserva, desea continuar@*  @reserva.MetodoPago *@</h5>
+                <p>Está seguro?</p>
+            </Confirmacion>
+
+
+                
+        
 
         </main>
   
@@ -144,17 +177,14 @@
 
 </html>
         
-<Confirmacion @ref="confirmacion"
-    onCancel="Cancelar"
-              @onConfirm="Borrar">
 
-</Confirmacion>
                
 @code {
     Confirmacion confirmacion;
 
     List<Reserva>? listaReserva;
     Reserva reserva;
+
     string Mensaje = "";
 
     protected override async Task OnInitializedAsync() //"Task" = Equivale a un "VOID"
@@ -180,14 +210,15 @@
         } 
     }
 
+
     private async Task Eliminar(Reserva reserva)
     {
-
+        confirmacion.Ver();
     }
-    
+
     private void Cancelar()
     {
-           
+        confirmacion.Ocultar();
     }
 
     private async Task Borrar()
@@ -195,9 +226,14 @@
 
     }
 
+}
+
+
+
+   
+
 
      
-}
 
 
 
