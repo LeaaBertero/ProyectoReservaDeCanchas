@@ -1,4 +1,5 @@
 ﻿@page "/Api/Reservas"
+
 @using Proyecto_LaGranSiete.Client.Servicios
 @inject IHTTPServicio http
 @using Proyecto_LaGranSiete.BD.Data.Entity
@@ -7,28 +8,25 @@
 
    
     <head>
-        <title>La Gran Siete - Oficial Sitio Web</title>
+        <title>La Gran Siete - Oficial</title>
     </head>
 
      
 
-    <body class="p-3 mb-2 bg-warning text-dark">
+    <body class="p-3 mb-2 bg-black text-secondary">
 
         <header>
-
-            <h1 class="text-center">La Gran Siete Página oficial</h1>
-
-            
+            <h1 class="text-center text-white text-uppercase">La Gran Siete Página oficial</h1>
 
 
         </header>
-      
+
+
         <main>
 
-          
             <section>
 
-                <h2 >
+                <h2 class="bg-gradient bg-black text-danger">
                     ¡Predio futbolístico "La Gran 7" te da la Bienvenida! El lugar ideal para vivir la pasión del fútbol sin importar tu edad
                     o nivel de juego. Nuestro predio cuenta con 7 canchas de fútbol de primer nivel, donde tanto hombres como mujeres pueden
                     disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
@@ -38,6 +36,18 @@
                     Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar. 
                     ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
                 </h2>
+                @* <br /> *@
+
+            <h2 class="text-center">
+               Reservá tu lugar !!
+            </h2>
+
+
+            @* <a class="btn-primary" href="/Api/ListReserva/Crear">Nueva reserva</a> *@
+            <div>
+                <a class="btn bg-success bg-gradient w-100 p-3 h-50 d-inline-block text-uppercase fs-2 fw-bolder text-white text-center"
+                href="/Api/ListReserva/Crear">Nueva Reserva</a>
+            </div>
 
             </section>  
 
@@ -48,23 +58,17 @@
 
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://mas10.ar/wp-content/uploads/2023/10/cesped-1024x682.webp" class="d-block w-100" alt="...">
+                    <div class="container img-fluid col-md-6">
+                        <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
 
             </section>
                 
-            <br />
-            <p class="text-center font-weit: fw-bolder text-light bg-dark text-uppercase">Para realizar una reserva,
-                complete los siguientes campos</p>
-
+           
+           
                
-            
-
-
-
             <table>
 
                 <tr>
@@ -99,11 +103,13 @@
                                 <td>@item.MetodoPago</td>
                                 <td>@item.EstadoReserva</td>
 
-                                @* boton de editar reserva *@
+                                @* Botón de editar reserva *@
                                 <td>
-                                    <a class="btn btn-light" 
+                                    <a class="btn btn-info" 
                                     href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
                                 </td>
+
+                                @* boton de eliminar la reserva *@
 
                                 <td>
                                     <button class="btn btn-danger"
@@ -131,37 +137,37 @@
 
             
 
-            <div>
+          @*   <div>
                 <img src="https://cdn.pixabay.com/photo/2020/02/01/15/50/ball-4810612_1280.jpg" alt="Imagen de futbol" />
                 <a class="btn btn-primary" href="/Api/ListReserva/Crear">Nueva Reserva</a>
-            </div>
+            </div> *@
 
-            @* aca va el codigo de conformacion de la etiqueta de confirmacion *@
+            @* aca va el codigo de confirmacion de la etiqueta de confirmacion *@
 
             <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Esta por borrar la reserva, desea continuar@*  @reserva.FechaHoraReserva *@</h5>
+                <h5>Esta por borrar la reserva, desea continuar?  @reserva.FechaHoraReserva </h5>
                 <p>Está seguro?</p>
             </Confirmacion>
             
             
             <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Está por borrar duración del alquiler?, desea continuar @* @reserva.DuracionAlquiler *@</h5>
+                <h5>Está por borrar duración del alquiler?, desea continuar @reserva.DuracionAlquiler</h5>
                 <p>Está seguro?</p>
             </Confirmacion>     
             
-            <Confirmacion @ref="confirmacion"
+           @*  <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Está por borrar duración del alquiler?, desea continuar @* @reserva.Monto *@</h5>
+                <h5>Está por borrar duración del alquiler?, desea continuar  @reserva.Monto </h5>
                 <p>Está seguro?</p>
             </Confirmacion> 
             
             <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Esta por borrar la reserva, desea continuar@*  @reserva.MetodoPago *@</h5>
+                <h5>Esta por borrar la reserva, desea continuar@reserva.MetodoPago</h5>
                 <p>Está seguro?</p>
-            </Confirmacion>
+            </Confirmacion> *@
 
 
                 

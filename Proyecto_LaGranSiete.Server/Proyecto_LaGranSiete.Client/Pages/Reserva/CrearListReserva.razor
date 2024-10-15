@@ -3,131 +3,139 @@
 @inject NavigationManager navigationManager
     
 <!DOCTYPE html>
+
     <html>
-    <head>
-        <title>Lista de reservas</title>
-    </head>
-    
-    <body>
 
-            <header>
+        <head>
+            <title>Lista de reservas</title>
+        </head>
 
-                <h1>Completá con los datos requeridos para realizar la reserva</h1>
+        <body class="p-3 mb-2 bg-black text-secondary">
 
-            </header>
+                <header>
+
+                    <h1 class="text-center border-danger border border-0">Reservá tu lugar, completando los campos</h1>
+
+                    @* <h3 >Completá con los datos requeridos para realizar la reserva</h3> *@
+
+                </header>
         
-            <main>
+                <main>
 
-                @* <h3>Nueva Reserva</h3> *@
+                    @* <h3>Nueva Reserva</h3> *@
 
 
-            <EditForm Model="reserva" OnValidSubmit="Grabar">
+                    <EditForm Model="reserva" OnValidSubmit="Grabar">
 
-                <DataAnnotationsValidator />
+                        <DataAnnotationsValidator />
 
-                <div class="form-group">
+                        <div class="form-group">
 
-                    <label>Fecha y Hora de Reserva</label>
+                            <label>Fecha y Hora de Reserva</label>
+
+                            <div>
+                                <input type="week" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+                                <ValidationMessage For="@(() => reserva.FechaHoraReserva )" />
+                            </div>
+
+                        </div>
+
+                    </EditForm>
+
+
+
+
+                    <EditForm Model="reserva" OnValidSubmit="Grabar">
+
+                        <DataAnnotationsValidator />
+
+                        <div class="form-group">
+
+                            <label>Duración del alquiler</label>
+
+                            <div>
+                                <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
+                                <ValidationMessage For="@(() => reserva.DuracionAlquiler )" />
+                            </div>
+
+                        </div>
+
+                    </EditForm>
+
+
+
+                    <EditForm Model="reserva" OnValidSubmit="Grabar">
+
+                        <DataAnnotationsValidator />
+
+                        <div class="form-group">
+
+                            <label>Monto o precio</label>
+
+                            <div>
+                                <input type="number" class="form-control" @bind-value="@reserva.Monto" />
+                                <ValidationMessage For="@(() => reserva.Monto )" />
+                            </div>
+
+                        </div>
+
+                    </EditForm>
+
+
+
+
+                    <EditForm Model="reserva" OnValidSubmit="Grabar">
+
+                        <DataAnnotationsValidator />
+
+                        <div class="form-group">
+
+                            <label>Método Pago</label>
+
+                            <div>
+                                <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
+                                <ValidationMessage For="@(() => reserva.MetodoPago )" />
+                            </div>
+
+                        </div>
+
+                    </EditForm>
+
+                    <EditForm Model="reserva" OnValidSubmit="Grabar">
+
+                        <DataAnnotationsValidator />
+
+                        <div class="form-group">
+
+                            <label>Estado de la reserva</label>
+
+                            <div>
+                                <input type="text" class="form-control" @bind-value="@reserva.EstadoReserva" />
+                                <ValidationMessage For="@(() => reserva.EstadoReserva )" />
+                            </div>
+
+                        </div>
+
+                    </EditForm>
+
+                    <br />
 
                     <div>
-                        <input type="week" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
-                        <ValidationMessage For="@(() => reserva.FechaHoraReserva )" />
+                        <input class="btn bg-success bg-gradient w-100 p-3 h-50 d-inline-block 
+                        text-uppercase fs-2 fw-bolder text-white text-center" type="submit" value="Reservar">
                     </div>
 
-                </div>
-
-            </EditForm>
+                   
 
 
+                </main>
 
+                <footer>
 
-            <EditForm Model="reserva" OnValidSubmit="Grabar">
-
-                <DataAnnotationsValidator />
-
-                <div class="form-group">
-
-                    <label>Duración del alquiler</label>
-
-                    <div>
-                        <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
-                        <ValidationMessage For="@(() => reserva.DuracionAlquiler )" />
-                    </div>
-
-                </div>
-
-            </EditForm>
-
-
-
-            <EditForm Model="reserva" OnValidSubmit="Grabar">
-
-                <DataAnnotationsValidator />
-
-                <div class="form-group">
-
-                    <label>Monto o precio</label>
-
-                    <div>
-                        <input type="number" class="form-control" @bind-value="@reserva.Monto" />
-                        <ValidationMessage For="@(() => reserva.Monto )" />
-                    </div>
-
-                </div>
-
-            </EditForm>
-
-
-
-
-            <EditForm Model="reserva" OnValidSubmit="Grabar">
-
-                <DataAnnotationsValidator />
-
-                <div class="form-group">
-
-                    <label>Método Pago</label>
-
-                    <div>
-                        <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
-                        <ValidationMessage For="@(() => reserva.MetodoPago )" />
-                    </div>
-
-                </div>
-
-            </EditForm>
-
-            <EditForm Model="reserva" OnValidSubmit="Grabar">
-
-                <DataAnnotationsValidator />
-
-                <div class="form-group">
-
-                    <label>Estado de la reserva</label>
-
-                    <div>
-                        <input type="text" class="form-control" @bind-value="@reserva.EstadoReserva" />
-                        <ValidationMessage For="@(() => reserva.EstadoReserva )" />
-                    </div>
-
-                </div>
-
-            </EditForm>
-
-            <br />
-
-            <div>
-                <input class="btn btn-success" type="submit" value="Reservar">
-            </div>
-
-
-            </main>
-
-            <footer>
-
-            </footer>
+                </footer>
     
-    </body>
+        </body>
+
     </html>
 
               
