@@ -72,11 +72,11 @@
             <table>
 
                 <tr>
-                    <th class="text-warning bg-dark">Fecha y hora de la reserva</th>
-                    <th class="text-warning bg-dark">Duración del alquiler</th>
-                    <th class="text-warning bg-dark">Monto</th>
-                    <th class="text-warning bg-dark">Método de pago</th>
-                    <th class="text-warning bg-dark">Estado de la reserva</th>
+                <th class="text-white bg-primary">Fecha y hora de la reserva</th>
+                <th class="text-white bg-primary">Duración del alquiler</th>
+                <th class="text-white bg-primary">Monto</th>
+                <th class="text-white bg-primary">Método de pago</th>
+                <th class="text-white bg-primary">Estado de la reserva</th>
                 </tr>
 
 
@@ -84,7 +84,7 @@
                 {
                     @if (listaReserva == null)
                     {
-                        <p>Buscando lista de reservas...</p>
+                        <p>Buscando lista, aguarde...</p>
                     }
                     else if (listaReserva.Count == 0)
                     {
@@ -101,12 +101,12 @@
                                 <td>@item.DuracionAlquiler</td>
                                 <td>@item.Monto</td>
                                 <td>@item.MetodoPago</td>
-                                <td>@item.EstadoReserva</td>
+                                <td>@item.EstadoReserva</td>    
 
                                 @* Botón de editar reserva *@
                                 <td>
-                                    <a class="btn btn-info" 
-                                    href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
+                                    <a class="btn btn-success"
+                                    href="/Api/Reservas/Editar/{ReservasId:int}@item.Id">Modificar reserva</a>
                                 </td>
 
                                 @* boton de eliminar la reserva *@
@@ -117,34 +117,33 @@
                                         Eliminar reserva
                                     </button>
                                 </td>
-                               
 
                             </tr>
                                 
-                           
                         }
-                    
                     }
-                
                 }
                 else
                 {
                     <p>Error: @Mensaje</p>
                 }
-
-
+                               
             </table>
+
+                                
+                           
+                    
+                
+
+
 
             
 
-          @*   <div>
-                <img src="https://cdn.pixabay.com/photo/2020/02/01/15/50/ball-4810612_1280.jpg" alt="Imagen de futbol" />
-                <a class="btn btn-primary" href="/Api/ListReserva/Crear">Nueva Reserva</a>
-            </div> *@
+         
 
-            @* aca va el codigo de confirmacion de la etiqueta de confirmacion *@
+            @* Confirmacion *@
 
-            <Confirmacion @ref="confirmacion"
+         @*    <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
                 <h5>Esta por borrar la reserva, desea continuar?  @reserva.FechaHoraReserva </h5>
                 <p>Está seguro?</p>
@@ -155,7 +154,7 @@
                 onCancel="Cancelar" @onConfirm="Borrar">
                 <h5>Está por borrar duración del alquiler?, desea continuar @reserva.DuracionAlquiler</h5>
                 <p>Está seguro?</p>
-            </Confirmacion>     
+            </Confirmacion>      *@
             
            @*  <Confirmacion @ref="confirmacion"
                 onCancel="Cancelar" @onConfirm="Borrar">
@@ -183,13 +182,21 @@
 
 </html>
         
+  
+<Confirmacion @ref=eliminar
+    onCancel="Cancelar"
+    onConfirm="Borrar">
+    <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Esta por borrar la reserva, desea continuar?</h5>
+</Confirmacion>
 
                
 @code {
-    Confirmacion confirmacion;
 
-    List<Reserva>? listaReserva;
+    List<Reserva> listaReserva;
+
     Reserva reserva;
+
+    Confirmacion eliminar;
 
     string Mensaje = "";
 
@@ -219,17 +226,17 @@
 
     private async Task Eliminar(Reserva reserva)
     {
-        confirmacion.Ver();
+        eliminar.Ver();
     }
 
     private void Cancelar()
     {
-        confirmacion.Ocultar();
+        eliminar.Ocultar();
     }
 
     private async Task Borrar()
     {
-
+        // eliminar.Ver();
     }
 
 }
