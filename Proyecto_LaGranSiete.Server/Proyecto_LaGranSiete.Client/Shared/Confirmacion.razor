@@ -5,73 +5,75 @@
             <title>Confirmacion</title>
         </head>
 
-            <body>
+        <body>
     
-                <header>
+            <header>
 
-                    <h3>Confirmacion</h3>
+                <h3>Confirmacion</h3>
 
-                    @if (Mostrar)
-                    {
-                        <div class="modal-backdrop show">
+                @if (Mostrar)
+                {
+                <div class="modal-backdrop show">
 
-                        </div>
+                </div>
             
-                            <div class="modal fade show" id="exampleModal" tabindex="-1"
-                                    role="dialog" aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true" style="display: block;">
+                <div class="modal fade show" id="exampleModal" tabindex="-1"
+                        role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true" style="display: block;">
                 
-                                    <div class="modal-dialog" role="document">
+                <div class="modal-dialog" role="document">
                     
-                                    <div class="modal-content">
+                    <div class="modal-content">
                         
-                                        <div class="modal-header">
+                    <div class="modal-header">
                             
-                                            <h5 class="modal-title" id="exampleModalLabel">@Titulo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">@Titulo</h5>
                         
-                                            <button @onclick="onCancel" type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                        <button @onclick="onCancel" type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         
-                                        </div>
+                    </div>
                         
-                                        <div class="modal-body">
-                                            @ChildContent
-                                        </div>
+                    <div class="modal-body">
+                            @ChildContent
+                        </div>
+                   
                         
-                                        <div class="modal-footer">
-                                            @if (verCancelar)
-                                            {
-                                                <button @onclick="onCancel" type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">
-                                                    @textCancelar
-                                                </button>
-                                            }
-                                            @if (verOk)
-                                            {
-                                                <button @onclick="onConfirm" type="button" class="btn btn-primary">
-                                                    @textOk
-                                                </button>
-                                            }
+                        <div class="modal-footer">
+                                
+                            @if (verCancelar)
+                            {
+                                <button @onclick="onCancel" type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">
+                                    @textCancelar
+                                </button>
+                            }
+                            @if (verOk)
+                            {
+                                <button @onclick="onConfirm" type="button" class="btn btn-primary">
+                                    @textOk
+                                </button>
+                            }
                     
-                            </div>
-                
                         </div>
                 
                     </div>
+                
+                </div>
 
-            </div>
-        }
+        </div>
+    }
 
-                </header>
-                    @* <Confirmacion @ref="Confirmacion"
-                        onCancel="Cancelar"
-                        @onConfirm="Borrar">
+            </header>
+                @* <Confirmacion @ref="Confirmacion"
+                    onCancel="Cancelar"
+                    @onConfirm="Borrar">
 
-                    </Confirmacion> *@
+                </Confirmacion> *@
         
-                    <main>
+                <main>
 
                         
 
@@ -79,14 +81,14 @@
 
 
 
-                    </main>
+                </main>
 
 
-                <footer>
+            <footer>
 
-                </footer>
+            </footer>
 
-            </body>
+        </body>
 
     </html>
 
