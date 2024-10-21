@@ -10,7 +10,7 @@
             <header>
 
                 @* <h3>Confirmacion</h3> *@
-
+     
                 @if (Mostrar)
                 {
                 <div class="modal-backdrop show">
@@ -29,18 +29,16 @@
                             
                     <h5 class="modal-title" id="exampleModalLabel">@Titulo</h5>
                         
-                        <button @onclick="onCancel" type="button" class="close" data-dismiss="modal"
-                                aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button @onclick="onCancel" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                         
                     </div>
                         
                     <div class="modal-body">
                             @ChildContent
-                        </div>
-                   
-                        
+                    </div>
                         <div class="modal-footer">
                                 
                             @if (verCancelar)
@@ -58,44 +56,29 @@
                             }
                     
                         </div>
-                
                     </div>
-                
                 </div>
-
         </div>
+                   
     }
             </header>
-
                 @* <Confirmacion @ref="Confirmacion"
                     onCancel="Cancelar"
                     @onConfirm="Borrar">
 
                 </Confirmacion> *@
-        
+                        
                 <main>
 
-                        
-
-                    
-
-
-
                 </main>
-
-
+                
             <footer>
-
+            
             </footer>
-
+                
         </body>
 
     </html>
-
-
-
-
-  
 
 @code {
 
