@@ -72,74 +72,83 @@
                 
            
            
-               
-            <table>
+            <div class="containter mt-5">
 
-                <tr>
-                <th class="text-white bg-primary">Fecha y hora de la reserva</th>
-                <th class="text-white bg-primary">Duración del alquiler</th>
-                <th class="text-white bg-primary">Monto</th>
-                <th class="text-white bg-primary">Método de pago</th>
-                <th class="text-white bg-primary">Estado de la reserva</th>
-                </tr>
+                <table class="table table-bordered table-striped">
+
+                    <tr>
+                        <th class="p-3 text-white-50 text-uppercase bg-success">Fecha y hora de la reserva</th>
+                        <th class="p-3 text-white-50 text-uppercase bg-success">Duración del alquiler</th>
+                        <th class="p-3 text-white-50 text-uppercase bg-success">Monto</th>
+                        <th class="p-3 text-white-50 text-uppercase bg-success">Método de pago</th>
+                        <th class="p-3 text-white-50 text-uppercase bg-success">Estado de la reserva</th>
+                    </tr>
 
 
-                @if (Mensaje == "")
-                {
-                    @if (listaReserva == null)
+                    @if (Mensaje == "")
                     {
-                        <p>Buscando reservas, aguarde...</p>
-                    }
-                    else if (listaReserva.Count == 0)
-                    {
-                        <p>No existen reservas realizadas</p>
+                        @if (listaReserva == null)
+                        {
+                            <p>Buscando reservas, aguarde...</p>
+                        }
+                        else if (listaReserva.Count == 0)
+                        {
+                            <p>No existen reservas realizadas</p>
+                        }
+                        else
+                        {
+                            @foreach (var item in listaReserva)
+                            {
+                                @* lista de los atributos de la tabla *@
+                                <tr>
+
+                                    <td class="text-danger">@item.FechaHoraReserva</td>
+                                    <td class="text-danger">@item.DuracionAlquiler</td>
+                                    <td class="text-danger">@item.Monto</td>
+                                    <td class="text-danger">@item.MetodoPago</td>
+                                    <td class="text-danger">@item.EstadoReserva</td>
+
+                                    @* Botón de editar reserva *@
+                                    <td class="bg-warning">
+                                        <a class="btn btn-warning"
+                                           href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
+                                    </td>
+
+                                    @* boton de eliminar la reserva *@
+
+                                    <td>
+                                        <button class="btn btn-danger"
+                                                @onclick="()=>Eliminar(item)">
+                                            Eliminar reserva
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            }
+                        }
                     }
                     else
                     {
-                        @foreach (var item in listaReserva)
-                        {
-                            @* lista de los atributos de la tabla *@
-                            <tr>
-
-                                <td>@item.FechaHoraReserva</td>
-                                <td>@item.DuracionAlquiler</td>
-                                <td>@item.Monto</td>
-                                <td>@item.MetodoPago</td>
-                                <td>@item.EstadoReserva</td>    
-
-                                @* Botón de editar reserva *@
-                                <td>
-                                    <a class="btn btn-warning"
-                                   href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
-                                </td>
-
-                                @* boton de eliminar la reserva *@
-
-                                <td>
-                                    <button class="btn btn-danger"
-                                            @onclick="()=>Eliminar(item)">
-                                        Eliminar reserva
-                                    </button>
-                                </td>
-
-                            </tr>
-                                
-                        }
+                        <p>Error: @Mensaje</p>
                     }
-                }
-                else
-                {
-                    <p>Error: @Mensaje</p>
-                }
-                               
-            </table>
 
-                                
-                           
-                    
-                
+                </table>
+
+            </div>
+
+            
 
 
+
+
+
+
+            <Confirmacion @ref=eliminar
+                          onCancel="Cancelar"
+                          onConfirm="Borrar">
+                <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Esta por borrar la reserva, desea continuar?</h5>
+            </Confirmacion>
 
             
 
@@ -187,11 +196,7 @@
 </html>
         
   
-<Confirmacion @ref=eliminar
-    onCancel="Cancelar"
-    onConfirm="Borrar">
-    <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Esta por borrar la reserva, desea continuar?</h5>
-</Confirmacion>
+
 
                
 @code {
