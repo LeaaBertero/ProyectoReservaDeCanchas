@@ -90,9 +90,20 @@
             </table>
         </div>
 
-        <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
-            <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Está por borrar la reserva, ¿desea continuar?</h5>
-        </Confirmacion>
+        <div class="container mt-5">
+            <div class="modal-dialog-centered">
+                <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
+                    <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
+                        <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
+                        @* <div class="d-flex justify-content-around">
+                            <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                            <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
+                        </div> *@
+                    </div>
+                </Confirmacion>
+            </div>
+        </div>
+
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
