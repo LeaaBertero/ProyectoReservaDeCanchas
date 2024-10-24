@@ -11,187 +11,99 @@
         <title>La Gran Siete - Oficial</title>
     </head>
 
-     
-
-    <body class="p-3 mb-2 bg-black text-secondary">
-
-        <header>
-            <h1 class="text-center text-white text-uppercase">La Gran Siete Página oficial</h1>
 
 
-        </header>
+<body class="p-3 mb-2 bg-black text-secondary">
+    <header class="text-center py-4 bg-dark text-white">
+        <h1 class="text-uppercase">La Gran Siete Página Oficial</h1>
+    </header>
 
+    <main class="container mt-5">
+        <section class="mb-5">
+            <h2 class="bg-black text-danger p-3 rounded">¡Predio futbolístico "La Gran 7" te da la Bienvenida!</h2>
+            <p class="text-white">
+                El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. Nuestro predio cuenta con 7 canchas de fútbol de primer nivel, donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
+                ¿No tienes equipo? ¡No te preocupes! Te lo armamos para que no te pierdas la oportunidad de jugar. Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego. Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar. ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
+            </p>
+        </section>
 
-        <main>
+        <section class="text-center mb-5">
+            <h2 class="text-center">Reservá tu lugar !!</h2>
+            <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4" href="/Api/ListReserva/Crear">Nueva Reserva</a>
+        </section>
 
-            <section>
-
-                <h2 class="bg-gradient bg-black text-danger">
-                    ¡Predio futbolístico "La Gran 7" te da la Bienvenida! El lugar ideal para vivir la pasión del fútbol sin importar tu edad
-                    o nivel de juego. Nuestro predio cuenta con 7 canchas de fútbol de primer nivel, donde tanto hombres como mujeres pueden
-                    disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
-                    ¿No tienes equipo? ¡No te preocupes! Te lo armamos para que no te pierdas la oportunidad de jugar.
-                    Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades hasta aquellos que solo quieren pasar un buen
-                    rato entre amigos y nuevos compañeros de juego.
-                    Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar. 
-                    ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
-                </h2>
-                @* <br /> *@
-
-            <h2 class="text-center">Reservá tu lugar !!
-            </h2>
-                   
-              
-                
-            
-            
-
-                @* BOTON DE nUEVA  *@
-                @* <a class="btn-primary" href="/Api/ListReserva/Crear">Nueva reserva</a> *@
-                <div class="container">
-                    <a class="btn bg-success d-flex justify-content-center p-1 h-25 w-25 text-uppercase fs-2 text-white-50 text-center"
-                    href="/Api/ListReserva/Crear">Nueva Reserva</a>
+        <section id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="..." />
                 </div>
+            </div>
+        </section>
 
-            </section>  
-
-            
-           
-
-            <section>
-                
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="container img-fluid col-md-6">
-                            <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-                
-           <h4 class="bg-black p-5 text-center text-uppercase text-white">lista de reservas</h4>
-           
-            <div class="containter mt-5">
-
-                <table class="table table-bordered table-striped">
-
+        <h4 class="bg-black p-3 text-center text-uppercase text-white">Lista de Reservas</h4>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
                     <tr>
-                        <th class="p-3 text-white text-center text-uppercase bg-black">Fecha y hora</th>
-                        <th class="p-3 text-white text-center text-uppercase bg-black">Duración</th>
-                        <th class="p-3 text-white text-center text-uppercase bg-black">Precio</th>
-                        <th class="p-3 text-white text-center text-uppercase bg-black">Método de pago</th>
-                        <th class="p-3 text-white text-center text-uppercase bg-black">Estado de la reserva</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Fecha y hora</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Duración</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Precio</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Método de pago</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Estado de la reserva</th>
+                        <th class="p-3 text-white text-uppercase bg-black">Acciones</th>
                     </tr>
-
-
+                </thead>
+                <tbody>
                     @if (Mensaje == "")
                     {
                         @if (listaReserva == null)
                         {
-                            <p>Buscando reservas, aguarde...</p>
+                            <tr><td colspan="6">Buscando reservas, aguarde...</td></tr>
                         }
                         else if (listaReserva.Count == 0)
                         {
-                            <p>No existen reservas realizadas</p>
+                            <tr><td colspan="6">No existen reservas realizadas</td></tr>
                         }
                         else
                         {
                             @foreach (var item in listaReserva)
                             {
-                                @* lista de los atributos de la tabla *@
                                 <tr>
-
-                                    <td class="text-danger text-center">@item.FechaHoraReserva</td>
-                                    <td class="text-danger text-center">@item.DuracionAlquiler</td>
-                                    <td class="text-danger text-center">@item.Monto</td>
-                                    <td class="text-danger text-center">@item.MetodoPago</td>
-                                    <td class="text-danger text-center">@item.EstadoReserva</td>
-
-                                    @* Botón de editar reserva *@
-                                    <td class="bg-warning">
-                                        <a class="btn btn-warning"
-                                           href="/Api/Reservas/Editar/@item.Id">Modificar reserva</a>
-                                    </td>
-
-                                    @* boton de eliminar la reserva *@
-
+                                    <td class="text-danger">@item.FechaHoraReserva</td>
+                                    <td class="text-danger">@item.DuracionAlquiler</td>
+                                    <td class="text-danger">@item.Monto</td>
+                                    <td class="text-danger">@item.MetodoPago</td>
+                                    <td class="text-danger">@item.EstadoReserva</td>
                                     <td>
-                                        <button class="btn btn-danger"
-                                                @onclick="()=>Eliminar(item)">
-                                            Eliminar reserva
-                                        </button>
+                                        <a class="btn btn-warning btn-sm mb-2" href="/Api/Reservas/Editar/@item.Id">Modificar</a>
+                                        <button class="btn btn-danger btn-sm" @onclick="()=>Eliminar(item)">Eliminar</button>
                                     </td>
-
                                 </tr>
-
                             }
                         }
                     }
                     else
                     {
-                        <p>Error: @Mensaje</p>
+                        <tr><td colspan="6">Error: @Mensaje</td></tr>
                     }
+                </tbody>
+            </table>
+        </div>
 
-                </table>
+        <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
+            <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Está por borrar la reserva, ¿desea continuar?</h5>
+        </Confirmacion>
+    </main>
 
-            </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="font-monospace mb-0">Todos los derechos reservados</p>
+    </footer>
 
-            
-
-
-
-
-
-
-            <Confirmacion @ref=eliminar
-                          onCancel="Cancelar"
-                          onConfirm="Borrar">
-                <h5 class="alert-danger bg-danger text-white text-center text-uppercase font-monospace">Esta por borrar la reserva, desea continuar?</h5>
-            </Confirmacion>
-
-            
-
-         
-
-            @* Confirmacion *@
-
-         @*    <Confirmacion @ref="confirmacion"
-                onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Esta por borrar la reserva, desea continuar?  @reserva.FechaHoraReserva </h5>
-                <p>Está seguro?</p>
-            </Confirmacion>
-            
-            
-            <Confirmacion @ref="confirmacion"
-                onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Está por borrar duración del alquiler?, desea continuar @reserva.DuracionAlquiler</h5>
-                <p>Está seguro?</p>
-            </Confirmacion>      *@
-            
-           @*  <Confirmacion @ref="confirmacion"
-                onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Está por borrar duración del alquiler?, desea continuar  @reserva.Monto </h5>
-                <p>Está seguro?</p>
-            </Confirmacion> 
-            
-            <Confirmacion @ref="confirmacion"
-                onCancel="Cancelar" @onConfirm="Borrar">
-                <h5>Esta por borrar la reserva, desea continuar@reserva.MetodoPago</h5>
-                <p>Está seguro?</p>
-            </Confirmacion> *@
-
-
-                
-        
-
-        </main>
-  
-        <footer>
-            <p class="font-monospace text-center">Todos los derechos reservados</p>
-        </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     
-    </body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 
 </html>
         
