@@ -30,10 +30,11 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Fecha y Hora de Reserva</label>
                         <div class="col-sm-9">
-                            <input type="week" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+                            <input type="datetime-local" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
                             <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
                         </div>
                     </div>
+
 
                     <!-- Duración del Alquiler -->
                     <div class="form-group row">
