@@ -53,3 +53,44 @@
         text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
     }
 }
+
+/*CODIGO DE CSS DE LA SECCION LISTa de reservas*/
+.highlight-title {
+    background: linear-gradient(45deg, #1e90ff, #ff6347);
+    color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.highlight-paragraph {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+    .highlight-paragraph strong {
+        color: #ff6347;
+    }
+
+@keyframes glow {
+    from {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+    }
+
+    to {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
+    }
+}
+
+
+
