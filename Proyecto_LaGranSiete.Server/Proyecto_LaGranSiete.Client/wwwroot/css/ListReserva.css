@@ -35,3 +35,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.impact-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+    }
+
+    to {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
+    }
+}

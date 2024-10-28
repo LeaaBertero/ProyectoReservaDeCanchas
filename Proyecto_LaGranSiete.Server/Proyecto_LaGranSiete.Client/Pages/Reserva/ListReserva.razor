@@ -18,7 +18,9 @@
 
 <body class="p-3 mb-2 bg-black text-secondary">
     <header class="text-center py-4 bg-dark text-white">
-        <h1 class="text-uppercase">La Gran Siete Página Oficial</h1>
+        <h1 class="text-uppercase">Prédio futbolístico La Gran 7</h1>
+
+        <h2>Fútbol y Amistad en Cada Partido.. reservá tu lugar !!</h2>
     </header>
 
     <main class="container mt-5">
@@ -35,6 +37,27 @@
             <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4" href="/Api/ListReserva/Crear">Nueva Reserva</a>
         </section>
 
+
+        @* codigo para borrar *@
+        <div class="container text-center my-5">
+            <div class="row">
+                <div class="col">
+                    <h2 class="impact-text">Reservá ya tu lugar !!!!!!!!!</h2>
+                </div>
+                <div class="col">
+                    <h2 class="impact-text">Reservá ya tu lugar !!!!!!!!!</h2>
+                </div>
+                <div class="col">
+                    <h2 class="impact-text">Reservá ya tu lugar !!!!!!!!!</h2>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+       
+
         <section id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -43,7 +66,12 @@
             </div>
         </section>
 
-        <h4 class="bg-black p-3 text-center text-uppercase text-white">Lista de Reservas</h4>
+        @* <h4 class="bg-black p-3 text-center  text-white">Lista de reservas</h4> *@
+        <h4 class="bg-gradient p-3 text-center text-white" style="background: linear-gradient(to right, green, blue); font-size: 1.5rem; font-family: 'Arial Black', sans-serif; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            ⚽ Lista de Reservas 🏆
+        </h4>
+
+  
         <div class="table-responsive">
             <table class="table table-bordered table-striped text-center">
                 <thead>
@@ -61,12 +89,22 @@
                     {
                         @if (listaReserva == null)
                         {
-                            <tr><td colspan="6">Buscando reservas, aguarde...</td></tr>
+                            <tr>
+                                <td colspan="6">Buscando reservas, aguarde...</td>
+                            </tr>
                         }
                         else if (listaReserva.Count == 0)
                         {
-                            <tr><td colspan="6">No existen reservas realizadas</td></tr>
+                            <tr>
+                                <td colspan="6">No existen reservas realizadas</td>
+                            </tr>
                         }
+                       @*  else if (listaReserva.Count == 1)
+                        {
+                            <tr>
+                                <td colspan="6">Reserva exitosa !</td>
+                            </tr>
+                        } *@
                         else
                         {
                             @foreach (var item in listaReserva)
