@@ -55,7 +55,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //public Usuario? Usuarios { get; set; }
 
         //Lista de reservas que lo usuarios realizaron
-        
+        //[Required(ErrorMessage = "La reserva es obligatoria")]
         public List<Reserva> Reservas { get; set; }
 
 
