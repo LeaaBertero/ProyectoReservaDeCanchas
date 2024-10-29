@@ -2,6 +2,7 @@
 
 @using Proyecto_LaGranSiete.Client.Servicios
 @inject IHTTPServicio http
+
 @using Proyecto_LaGranSiete.BD.Data.Entity
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -85,6 +86,7 @@
                         <th class="p-3 text-white text-uppercase bg-black">Acciones</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @if (Mensaje == "")
                     {
@@ -128,8 +130,11 @@
                     {
                         <tr><td colspan="6">Error: @Mensaje</td></tr>
                     }
+
                 </tbody>
+
             </table>
+        
         </div>
 
         <div class="container mt-5">
@@ -145,6 +150,8 @@
                 </Confirmacion>
             </div>
         </div>
+
+        
 
     </main>
 
@@ -197,7 +204,7 @@
         } 
     }
 
-
+    //metodo que elimina la rserva
     private async Task Eliminar(Reserva reserva)
     {
         eliminar.Ver();
@@ -210,9 +217,13 @@
 
     private async Task Borrar()
     {
-        // eliminar.Ver();
+        eliminar.Ver();
     }
 
+    
+    // codigo de prueba de eliminacion de una reserva
+   
+   
 }
 
 
