@@ -1,5 +1,6 @@
 ﻿
 using Proyecto_LaGranSiete.BD.Data.Entity;
+using Proyecto_LaGranSiete.Client.Pages.Reserva;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
@@ -88,7 +89,9 @@ namespace Proyecto_LaGranSiete.Client.Servicios
         }
 
 
-      
+       
+
+
     }
     
 }
