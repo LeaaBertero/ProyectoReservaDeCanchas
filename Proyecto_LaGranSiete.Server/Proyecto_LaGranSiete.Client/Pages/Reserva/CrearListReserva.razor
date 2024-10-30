@@ -1,6 +1,8 @@
 ﻿@page "/Api/ListReserva/Crear"
 @inject IHTTPServicio http
 @inject NavigationManager navigationManager
+
+
     
 <!DOCTYPE html>
 
@@ -22,7 +24,7 @@
 
             <main class="container mt-5">
 
-                <h3 class="text-center">Nueva Reserva</h3>
+                <h3 class="text-center">Nueva Reserva acá realizamos una reserva </h3>
                 <EditForm Model="reserva" OnValidSubmit="Grabar">
                     <DataAnnotationsValidator />
 
@@ -126,6 +128,10 @@
     {
         navigationManager.NavigateTo("/Api/Reservas");
     }
+
+   
+
+
 }
             
 

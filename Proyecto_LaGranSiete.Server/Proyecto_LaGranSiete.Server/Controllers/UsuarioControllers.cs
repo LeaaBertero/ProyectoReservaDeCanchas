@@ -57,42 +57,42 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id,[FromBody] Usuario entidad) 
-        {
-            if (id != entidad.Id)
-            {
-                return BadRequest("Datos incorrectos");
-            }
+        //[HttpPut("{id:int}")]
+        //public async Task<ActionResult> Put(int id,[FromBody] Usuario entidad) 
+        //{
+        //    if (id != entidad.Id)
+        //    {
+        //        return BadRequest("Datos incorrectos");
+        //    }
              
-            var lean = await context.Usuarios.Where(e=> entidad.Id==id).FirstOrDefaultAsync();
+        //    var lean = await context.Usuarios.Where(e=> entidad.Id==id).FirstOrDefaultAsync();
 
-            if (lean == null)
-            {
-                return NotFound("No existe el usuario buscado");
-            }
+        //    if (lean == null)
+        //    {
+        //        return NotFound("No existe el usuario buscado");
+        //    }
 
-            lean.Nombre = entidad.Nombre;
-            lean.Apellido = entidad.Apellido;
-            lean.FechaNacimiento = entidad.FechaNacimiento;
-            lean.Telefono = entidad.Telefono;
-            lean.CorreoElectronico = entidad.CorreoElectronico;
-            lean.Parentesco = entidad.Parentesco;
+        //    lean.Nombre = entidad.Nombre;
+        //    lean.Apellido = entidad.Apellido;
+        //    lean.FechaNacimiento = entidad.FechaNacimiento;
+        //    lean.Telefono = entidad.Telefono;
+        //    lean.CorreoElectronico = entidad.CorreoElectronico;
+        //    lean.Parentesco = entidad.Parentesco;
 
-            try
-            {
-                context.Usuarios.Update(lean);
-                await context.SaveChangesAsync();
-            }
-            catch (Exception err)
-            {
+        //    try
+        //    {
+        //        context.Usuarios.Update(lean);
+        //        await context.SaveChangesAsync();
+        //    }
+        //    catch (Exception err)
+        //    {
 
-                return BadRequest(err.Message);
-            }
+        //        return BadRequest(err.Message);
+        //    }
 
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
         //[HttpDelete("{id:int}")]
         //public async Task<ActionResult> Delete(int id) 

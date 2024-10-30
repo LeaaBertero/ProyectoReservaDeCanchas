@@ -1,4 +1,6 @@
 ﻿
+using Proyecto_LaGranSiete.BD.Data.Entity;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 
@@ -84,7 +86,11 @@ namespace Proyecto_LaGranSiete.Client.Servicios
             return JsonSerializer.Deserialize<T>(respuestaStr,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
+
+
+      
     }
+    
 }
           
 
