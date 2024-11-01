@@ -19,66 +19,66 @@
               
             </header>
 
-    <main class="container mt-5">
-        <h3>Modificar Reserva</h3>
-        <EditForm Model="Reserva" OnValidSubmit="Grabar">
-            <DataAnnotationsValidator />
+            <main class="container mt-5">
+                <h3>Modificar Reserva</h3>
+                <EditForm Model="Reserva" OnValidSubmit="Grabar">
+                    <DataAnnotationsValidator />
 
-            <!-- Fecha y Hora de Reserva -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Fecha y Hora de Reserva</label>
-                <div class="col-sm-9">
-                    <input type="datetime-local" class="form-control" @bind-value="@Reserva.FechaHoraReserva" />
-                    <ValidationMessage For="@(() => Reserva.FechaHoraReserva)" />
-                </div>
-            </div>
+                    <!-- Fecha y Hora de Reserva -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Fecha y Hora de Reserva</label>
+                        <div class="col-sm-9">
+                            <input type="datetime-local" class="form-control" @bind-value="@Reserva.FechaHoraReserva" />
+                            <ValidationMessage For="@(() => Reserva.FechaHoraReserva)" />
+                        </div>
+                    </div>
 
 
 
-            <!-- Duración del Alquiler -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Duración del alquiler</label>
-                <div class="col-sm-9">
-                    <input type="number" class="form-control" @bind-value="@Reserva.DuracionAlquiler" />
-                    <ValidationMessage For="@(() => Reserva.DuracionAlquiler)" />
-                </div>
-            </div>
+                    <!-- Duración del Alquiler -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Duración del alquiler</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" @bind-value="@Reserva.DuracionAlquiler" />
+                            <ValidationMessage For="@(() => Reserva.DuracionAlquiler)" />
+                        </div>
+                    </div>
 
-            <!-- Monto o Precio -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Monto o precio</label>
-                <div class="col-sm-9">
-                    <input type="number" class="form-control" @bind-value="@Reserva.Monto" />
-                    <ValidationMessage For="@(() => Reserva.Monto)" />
-                </div>
-            </div>
+                    <!-- Monto o Precio -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Monto o precio</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" @bind-value="@Reserva.Monto" />
+                            <ValidationMessage For="@(() => Reserva.Monto)" />
+                        </div>
+                    </div>
 
-            <!-- Método de Pago -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Método de Pago</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" @bind-value="@Reserva.MetodoPago" />
-                    <ValidationMessage For="@(() => Reserva.MetodoPago)" />
-                </div>
-            </div>
+                    <!-- Método de Pago -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Método de Pago</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" @bind-value="@Reserva.MetodoPago" />
+                            <ValidationMessage For="@(() => Reserva.MetodoPago)" />
+                        </div>
+                    </div>
 
-            <!-- Estado de la Reserva -->
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Estado de la reserva</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" @bind-value="@Reserva.EstadoReserva" />
-                    <ValidationMessage For="@(() => Reserva.EstadoReserva)" />
-                </div>
-            </div>
+                    <!-- Estado de la Reserva -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Estado de la reserva</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" @bind-value="@Reserva.EstadoReserva" />
+                            <ValidationMessage For="@(() => Reserva.EstadoReserva)" />
+                        </div>
+                    </div>
 
-            <!-- Botón de Confirmar Reserva -->
-            <div class="text-center mt-4 d-flex justify-content-center">
-                <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
-                    Confirmar
-                </button>
-            </div>
-        </EditForm>
-    </main>
+                    <!-- Botón de Confirmar Reserva -->
+                    <div class="text-center mt-4 d-flex justify-content-center">
+                        <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
+                            Confirmar
+                        </button>
+                    </div>
+                </EditForm>
+            </main>
 
         
             <footer>
