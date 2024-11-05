@@ -126,4 +126,13 @@
 }
 
 
+/*codigo de imagen de reserva*/
+.carousel-item img {
+    height: 300px; /* Ajusta esta altura según tus preferencias */
+    object-fit: cover;
+    border-radius: 10px; /* Añade bordes redondeados para un toque más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para destacar */
+}
+
+
 
