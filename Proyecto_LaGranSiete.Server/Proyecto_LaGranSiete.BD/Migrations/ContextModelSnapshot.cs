@@ -265,9 +265,9 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     b.Property<int?>("EquipoUnoId")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("EstadoReserva")
+                    b.Property<string>("EstadoReserva")
                         .IsRequired()
-                        .HasColumnType("bit");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("FechaHoraReserva")
                         .HasColumnType("datetime2");
@@ -293,7 +293,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.HasIndex("ReservaId");
 
-                    b.HasIndex(new[] { "FechaHoraReserva", "DuracionAlquiler", "Monto", "MetodoPago", "EstadoReserva" }, "Reserva_FechaHoraReserva_DuracionAlquiler_Monto_MetodoPago_EstadoReserva");
+                    b.HasIndex(new[] { "FechaHoraReserva", "DuracionAlquiler", "Monto", "MetodoPago", "EstadoReserva" }, "FechaHoraReserva_DuracionAlquiler_Monto_MetodoPago_EstadoReserva");
 
                     b.HasIndex(new[] { "UsuarioId" }, "UsuarioId_UQ")
                         .IsUnique()

@@ -193,7 +193,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     DuracionAlquiler = table.Column<int>(type: "int", nullable: false),
                     Monto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     MetodoPago = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    EstadoReserva = table.Column<bool>(type: "bit", nullable: false),
+                    EstadoReserva = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: true),
                     EquipoDosId = table.Column<int>(type: "int", nullable: true),
                     EquipoUnoId = table.Column<int>(type: "int", nullable: true)
@@ -335,6 +335,11 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "FechaHoraReserva_DuracionAlquiler_Monto_MetodoPago_EstadoReserva",
+                table: "Reservas",
+                columns: new[] { "FechaHoraReserva", "DuracionAlquiler", "Monto", "MetodoPago", "EstadoReserva" });
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reservas_EquipoDosId",
                 table: "Reservas",
                 column: "EquipoDosId");
@@ -348,11 +353,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 name: "IX_Reservas_ReservaId",
                 table: "Reservas",
                 column: "ReservaId");
-
-            migrationBuilder.CreateIndex(
-                name: "Reserva_FechaHoraReserva_DuracionAlquiler_Monto_MetodoPago_EstadoReserva",
-                table: "Reservas",
-                columns: new[] { "FechaHoraReserva", "DuracionAlquiler", "Monto", "MetodoPago", "EstadoReserva" });
 
             migrationBuilder.CreateIndex(
                 name: "UsuarioId_UQ",
