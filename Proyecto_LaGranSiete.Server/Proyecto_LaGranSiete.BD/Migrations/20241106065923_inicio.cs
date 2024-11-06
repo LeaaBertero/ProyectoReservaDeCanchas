@@ -188,7 +188,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReservaId = table.Column<int>(type: "int", nullable: false),
+                    ReservaId = table.Column<int>(type: "int", nullable: true),
                     FechaHoraReserva = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DuracionAlquiler = table.Column<int>(type: "int", nullable: false),
                     Monto = table.Column<float>(type: "real", nullable: false),
@@ -215,8 +215,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         name: "FK_Reservas_Reservas_ReservaId",
                         column: x => x.ReservaId,
                         principalTable: "Reservas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

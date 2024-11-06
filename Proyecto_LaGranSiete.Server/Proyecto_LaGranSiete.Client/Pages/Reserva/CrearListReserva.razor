@@ -2,6 +2,9 @@
 @inject IHTTPServicio http
 @inject NavigationManager navigationManager
 
+@using System.ComponentModel.DataAnnotations 
+@inject IJSRuntime JSRuntime
+
 
     
 <!DOCTYPE html>
@@ -10,6 +13,8 @@
 
         <head>
             <title>Lista de reservas</title>
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         </head>
 
         <body class="p-3 mb-2 bg-black text-secondary">
@@ -36,6 +41,19 @@
                             <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
                         </div>
                     </div>
+
+                  
+
+                    
+                      
+                  
+                  
+                      
+                  
+                  
+                   
+                   
+                   
 
 
                     <!-- Duración del Alquiler -->
@@ -102,7 +120,8 @@
             <footer>
 
             </footer>
-    
+
+             <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         </body>
 
     </html>

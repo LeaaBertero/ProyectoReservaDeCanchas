@@ -28,7 +28,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         [Required(ErrorMessage = "El nombre del equipo es obligatorio")]
         [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
-        public string? NombreEquipos { get; set; }
+        public string NombreEquipos { get; set; }
         //-------------------------------------------------------
         //cantidad de integrantes que conforman el equipo
         //-------------------------------------------------------

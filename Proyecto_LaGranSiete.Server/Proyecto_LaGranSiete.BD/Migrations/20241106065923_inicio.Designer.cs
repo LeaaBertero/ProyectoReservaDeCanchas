@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241106050148_inicio")]
+    [Migration("20241106065923_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -232,8 +232,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     b.Property<int>("CanchaId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("FechaHoraPartidos")
-                        .IsRequired()
+                    b.Property<DateTime>("FechaHoraPartidos")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PartidoId")
@@ -282,7 +281,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     b.Property<float>("Monto")
                         .HasColumnType("real");
 
-                    b.Property<int>("ReservaId")
+                    b.Property<int?>("ReservaId")
                         .HasColumnType("int");
 
                     b.Property<int?>("UsuarioId")
@@ -451,9 +450,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.HasOne("Proyecto_LaGranSiete.BD.Data.Entity.Reserva", null)
                         .WithMany("Reservas")
-                        .HasForeignKey("ReservaId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("ReservaId");
                 });
 
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.EquipoDos", b =>
