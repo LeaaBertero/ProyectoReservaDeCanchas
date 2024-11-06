@@ -188,10 +188,10 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReservaId = table.Column<int>(type: "int", nullable: true),
+                    ReservaId = table.Column<int>(type: "int", nullable: false),
                     FechaHoraReserva = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DuracionAlquiler = table.Column<int>(type: "int", nullable: false),
-                    Monto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Monto = table.Column<float>(type: "real", nullable: false),
                     MetodoPago = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     EstadoReserva = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: true),
@@ -215,7 +215,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         name: "FK_Reservas_Reservas_ReservaId",
                         column: x => x.ReservaId,
                         principalTable: "Reservas",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

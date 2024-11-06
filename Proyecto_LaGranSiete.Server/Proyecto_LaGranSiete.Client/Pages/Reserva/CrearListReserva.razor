@@ -30,7 +30,7 @@
 
                     <!-- Fecha y Hora de Reserva -->
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Fecha y Hora de Reserva</label>
+                        <label class="col-sm-3 col-form-label">Fecha/Hora Reserva</label>
                         <div class="col-sm-9">
                             <input type="datetime-local" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
                             <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
@@ -40,7 +40,7 @@
 
                     <!-- Duración del Alquiler -->
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Duración del alquiler</label>
+                        <label class="col-sm-3 col-form-label">Tiempo de alquiler</label>
                         <div class="col-sm-9">
                             <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
                             <ValidationMessage For="@(() => reserva.DuracionAlquiler)" />
@@ -49,7 +49,7 @@
 
                     <!-- Monto o Precio -->
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Monto o precio</label>
+                        <label class="col-sm-3 col-form-label">Precio</label>
                         <div class="col-sm-9">
                             <input type="number" class="form-control" @bind-value="@reserva.Monto" />
                             <ValidationMessage For="@(() => reserva.Monto)" />

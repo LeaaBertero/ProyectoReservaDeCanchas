@@ -5,7 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+
 
 namespace Proyecto_LaGranSiete.BD.Data.Entity
 {
@@ -17,6 +19,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     public class Reserva : EntityBase
     {
         //Clave primaria de la tabla Reservas
+   
         public int? ReservaId { get; set; }
 
         //----------------------------------------------------
@@ -27,7 +30,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         //----------------------------------------------------
 
-        [Required(ErrorMessage = "la fecha y hora de la reserva, es obligatoria")]
+        [Required(ErrorMessage = "La fecha y hora de la reserva, es obligatoria")]
         public DateTime FechaHoraReserva { get; set; }
 
 
@@ -36,7 +39,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
 
         [Required(ErrorMessage = "El monto es obligatorio")]
-        public Decimal Monto { get; set; }
+        public float Monto { get; set; }
 
 
         [Required(ErrorMessage = "El método es obligatorio")]
@@ -55,7 +58,9 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //public Usuario? Usuarios { get; set; }
 
         //Lista de reservas que lo usuarios realizaron
-        //[Required(ErrorMessage = "La reserva es obligatoria")]
+        
+
+       
         public List<Reserva> Reservas { get; set; }
 
 

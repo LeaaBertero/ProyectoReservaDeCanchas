@@ -276,10 +276,10 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<decimal>("Monto")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Monto")
+                        .HasColumnType("real");
 
-                    b.Property<int?>("ReservaId")
+                    b.Property<int>("ReservaId")
                         .HasColumnType("int");
 
                     b.Property<int?>("UsuarioId")
@@ -448,7 +448,9 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.HasOne("Proyecto_LaGranSiete.BD.Data.Entity.Reserva", null)
                         .WithMany("Reservas")
-                        .HasForeignKey("ReservaId");
+                        .HasForeignKey("ReservaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.EquipoDos", b =>
