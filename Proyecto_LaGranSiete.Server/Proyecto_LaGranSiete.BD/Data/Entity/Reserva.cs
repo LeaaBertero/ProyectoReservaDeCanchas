@@ -19,7 +19,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     public class Reserva : EntityBase
     {
         //Clave primaria de la tabla Reservas
-   
+        [JsonIgnore] /*Para excluir la clave foranea del json*/
         public int? ReservaId { get; set; }
 
         //----------------------------------------------------
@@ -58,10 +58,13 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //public Usuario? Usuarios { get; set; }
 
         //Lista de reservas que lo usuarios realizaron
-        
 
-       
-        public List<Reserva>? Reservas { get; set; }
+
+
+
+        [JsonPropertyName("reservas")] 
+        public List<Reserva> Reservas { get; set; } = new List<Reserva>();
+        //public List<Reserva>? Reservas { get; set; }
 
 
        
