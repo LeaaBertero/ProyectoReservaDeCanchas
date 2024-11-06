@@ -21,7 +21,14 @@
 
             <header>
 
-                <h1 class="text-center border-danger border border-0">Reservá tu lugar, completando los campos</h1>
+                @* <h1 class="text-center border-danger border border-0">Reservá tu lugar, completando los campos</h1> *@
+
+                <div class="text-center my-4">
+                    <h1 class="display-3 text-white bg-gradient p-4 rounded-pill shadow" style="background: linear-gradient(to right, #ff7e5f, #feb47b);">Reservá tu lugar</h1>
+                    <p class="lead text-dark">Completando los campos</p>
+                </div>
+
+
 
                 @* <h3 >Completá con los datos requeridos para realizar la reserva</h3> *@
 
@@ -29,7 +36,6 @@
 
             <main class="container mt-5">
 
-                <h3 class="text-center">Nueva Reserva acá realizamos una reserva </h3>
                 <EditForm Model="reserva" OnValidSubmit="Grabar">
                     <DataAnnotationsValidator />
 
