@@ -103,70 +103,70 @@
                         </button>
                     </div> *@
 
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        <div class="card shadow-lg border-0 rounded-lg">
-                            <div class="card-header bg-primary text-white text-center">
-                                <h3 class="font-weight-bold">Reservá tu lugar</h3>
-                                <p class="mb-0">Completando los campos</p>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Fecha/Hora Reserva</label>
-                                    <div class="col-sm-9">
-                                        <input type="datetime-local" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
-                                        <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-6">
+                                <div class="card shadow-lg border-0 rounded-lg">
+                                    <div class="card-header bg-primary text-white text-center">
+                                        <h3 class="font-weight-bold">Reservá tu lugar</h3>
+                                        <p class="mb-0">Completando los campos</p>
                                     </div>
-                                </div>
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Fecha/Hora Reserva</label>
+                                            <div class="col-sm-9">
+                                                <input type="datetime-local" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+                                                <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
+                                            </div>
+                                        </div>
 
-                                <!-- Duración del Alquiler -->
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tiempo de alquiler</label>
-                                    <div class="col-sm-9">
-                                        <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
-                                        <ValidationMessage For="@(() => reserva.DuracionAlquiler)" />
+                                        <!-- Duración del Alquiler -->
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Tiempo de alquiler</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
+                                                <ValidationMessage For="@(() => reserva.DuracionAlquiler)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Monto o Precio -->
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Precio</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" @bind-value="@reserva.Monto" />
+                                                <ValidationMessage For="@(() => reserva.Monto)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Método Pago -->
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Método Pago</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
+                                                <ValidationMessage For="@(() => reserva.MetodoPago)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Estado de la Reserva -->
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Estado de la reserva</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" @bind-value="@reserva.EstadoReserva" />
+                                                <ValidationMessage For="@(() => reserva.EstadoReserva)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Botón de Reservar -->
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
+                                                Reservar ahora
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <!-- Monto o Precio -->
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Precio</label>
-                                    <div class="col-sm-9">
-                                        <input type="number" class="form-control" @bind-value="@reserva.Monto" />
-                                        <ValidationMessage For="@(() => reserva.Monto)" />
-                                    </div>
-                                </div>
-
-                                <!-- Método Pago -->
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Método Pago</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" @bind-value="@reserva.MetodoPago" />
-                                        <ValidationMessage For="@(() => reserva.MetodoPago)" />
-                                    </div>
-                                </div>
-
-                                <!-- Estado de la Reserva -->
-                                <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Estado de la reserva</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" @bind-value="@reserva.EstadoReserva" />
-                                        <ValidationMessage For="@(() => reserva.EstadoReserva)" />
-                                    </div>
-                                </div>
-
-                                <!-- Botón de Reservar -->
-                                <div class="text-center mt-4">
-                                    <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
-                                        Reservar ahora
-                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
 
                     @* boton de reserva, prueba de modificacón, (NO me gusta !!) *@
