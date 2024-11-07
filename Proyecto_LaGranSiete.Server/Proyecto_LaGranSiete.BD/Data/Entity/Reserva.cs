@@ -50,9 +50,6 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         public string? EstadoReserva { get; set; }
 
 
-
-
-
         //Tabla de referencia con Reserva
         public int? UsuarioId { get; set; }
         //public Usuario? Usuarios { get; set; }
@@ -60,17 +57,20 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //Lista de reservas que lo usuarios realizaron
 
 
-
-
         [JsonPropertyName("reservas")] 
         public List<Reserva> Reservas { get; set; } = new List<Reserva>();
         //public List<Reserva>? Reservas { get; set; }
 
+    }
+}
+
+
+
+
+
 
        
        
-    }
-}
 
 
         
