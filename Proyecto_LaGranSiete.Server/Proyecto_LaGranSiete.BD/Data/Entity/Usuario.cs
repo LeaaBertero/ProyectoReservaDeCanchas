@@ -28,7 +28,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         public string? Apellido { get; set; }
 
         [Required(ErrorMessage = "La fecha Nacimiento, es obligatoria")]
-        public DateTime FechaNacimiento { get; set; }
+        public DateOnly FechaNacimiento { get; set; }
        
 
         [Required(ErrorMessage = "El teléfono, es obligatorio - (con guión despues del 351)")]

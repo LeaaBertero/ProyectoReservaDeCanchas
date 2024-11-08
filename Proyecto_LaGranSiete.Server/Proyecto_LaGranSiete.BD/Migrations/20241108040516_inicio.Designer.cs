@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241106065923_inicio")]
+    [Migration("20241108040516_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -302,6 +302,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasFilter("[UsuarioId] IS NOT NULL");
 
                     b.ToTable("Reservas");
+
+                    b.HasAnnotation("Relational:JsonPropertyName", "reservas");
                 });
 
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", b =>
@@ -322,8 +324,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<DateTime>("FechaNacimiento")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("FechaNacimiento")
+                        .HasColumnType("date");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
