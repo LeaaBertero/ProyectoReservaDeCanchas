@@ -80,6 +80,7 @@ namespace Proyecto_LaGranSiete.Client.Servicios
             return new HTTPRespuesta<object>(null, !respuesta.IsSuccessStatusCode, respuesta);
         }
 
+
         private async Task<T?> DesSerializar<T>(HttpResponseMessage response)
         {
             var respuestaStr = await response.Content.ReadAsStringAsync();
