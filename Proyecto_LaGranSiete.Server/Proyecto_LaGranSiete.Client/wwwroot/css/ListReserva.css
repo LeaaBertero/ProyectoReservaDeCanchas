@@ -144,6 +144,24 @@
 }
 
 
+/*diseño del boton de reservas en la sección de la lista de las reservas*/
+.custom-btn {
+    border-radius: 25px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreado */
+    transition: all 0.3s ease; /* Transición suave */
+    padding: 10px 20px; /* Ajuste del tamaño del botón */
+    font-weight: bold; /* Texto en negrita */
+    background-color: #28a745; /* Color de fondo */
+    border: none; /* Sin borde */
+}
+
+.custom-btn:hover {
+    background-color: #218838; /* Color al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombreado al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+
 
 
 

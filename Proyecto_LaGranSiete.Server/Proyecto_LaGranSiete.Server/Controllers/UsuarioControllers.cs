@@ -13,7 +13,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
     {
         private readonly Context context;
 
-        public UsuarioControllers(Context context)
+        public UsuarioControllers(Context context)      
         {
             this.context = context;
         }
