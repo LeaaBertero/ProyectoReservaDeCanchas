@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241109202548_inicio")]
+    [Migration("20241112023117_inicio")]
     partial class inicio
     {
         /// <inheritdoc />

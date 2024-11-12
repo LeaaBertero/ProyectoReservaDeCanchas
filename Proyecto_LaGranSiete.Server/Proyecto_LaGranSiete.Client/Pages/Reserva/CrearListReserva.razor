@@ -122,7 +122,7 @@
 
                                         <!-- Duración del Alquiler -->
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Tiempo de alquiler</label>
+                                            <label class="col-sm-3 col-form-label">Tiempo de alquiler (Hs)</label>
                                             <div class="col-sm-9">
                                                 <input type="number" class="form-control" @bind-value="@reserva.DuracionAlquiler" />
                                                 <ValidationMessage For="@(() => reserva.DuracionAlquiler)" />
@@ -131,7 +131,7 @@
 
                                         <!-- Monto o Precio -->
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Cantidad abonada</label>
+                                            <label class="col-sm-3 col-form-label">Precio por alquiler</label>
                                             <div class="col-sm-9">
                                                 <input type="number" class="form-control" @bind-value="@reserva.Monto" />
                                                 <ValidationMessage For="@(() => reserva.Monto)" />
