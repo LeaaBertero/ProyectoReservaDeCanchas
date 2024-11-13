@@ -92,39 +92,39 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
 
         //EndPoint  - Put (actualizar)
-        [HttpPut("{id:int}")] 
-        public async Task<ActionResult<bool>> Put(int id, [FromBody] Reserva entidad)
-        {
-            if (id == entidad.Id)
-            {
-                return BadRequest("Datos incorrectos");
-            }
+        //[HttpPut("{id:int}")] 
+        //public async Task<ActionResult<bool>> Put(int id, [FromBody] Reserva entidad)
+        //{
+        //    if (id == entidad.Id)
+        //    {
+        //        return BadRequest("Datos incorrectos");
+        //    }
 
 
-            try
-            {
-                if (id != entidad.Id)
-                {
-                    return BadRequest("Datos incorrectos");
-                }
+        //    try
+        //    {
+        //        if (id != entidad.Id)
+        //        {
+        //            return BadRequest("Datos incorrectos");
+        //        }
 
-                var Lean = await repositorio.Update(id, entidad);
+        //        var Lean = await repositorio.Update(id, entidad);
 
-                if (!Lean)
-                {
-                    return BadRequest("No se pudo actualizar la reserva");
-                }
+        //        if (!Lean)
+        //        {
+        //            return BadRequest("No se pudo actualizar la reserva");
+        //        }
 
-                return Lean;
+        //        return Lean;
 
-            }
-            catch (Exception e)
-            {
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return BadRequest(e.Message);
-                //throw;
-            }
-        }
+        //        return BadRequest(e.Message);
+        //        //throw;
+        //    }
+        //}
 
         //EndPoint - Delete
         [HttpDelete("{id:int}")]
