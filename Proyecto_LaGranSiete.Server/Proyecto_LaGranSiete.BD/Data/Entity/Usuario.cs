@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+
 
 namespace Proyecto_LaGranSiete.BD.Data.Entity
 {
@@ -13,6 +15,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     public class Usuario : EntityBase
     {
         //Clave primaria de la tabla
+        [JsonIgnore] /*Para excluir la clave foranea del json*/
         public int UsuarioId { get; set; }
 
 
