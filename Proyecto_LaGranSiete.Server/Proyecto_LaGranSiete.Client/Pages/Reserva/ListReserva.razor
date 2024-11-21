@@ -18,14 +18,6 @@
 
     <body class="p-3 mb-2 bg-black text-secondary">
 
-        <section id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="..." />
-                </div>
-            </div>
-        </section>
-       
         <header class="text-center py-4 bg-dark text-white">
             <h1 class="text-uppercase">Prédio futbolístico <span style="color: lime; font-size: 2.5em; text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7), 0 0 10px lime;">La Gran 7</span></h1>
 
@@ -35,15 +27,33 @@
 
         </header>
 
+
+        <section id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="..." />
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mb-5">
+            <h2 class="text-center">Reservá tu lugar en la cancha !</h2>
+        <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4 custom-btn" href="/Api/ListReserva/Crear"> >>> Click aquí para reservar >>> </a>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="highlight-title">¡Predio futbolístico "La Gran 7" te da la Bienvenida!</h2>
+            <p class="highlight-paragraph">
+                El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. Nuestro predio cuenta con <strong>7 canchas de fútbol de primer nivel</strong>, donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
+                ¿No tienes equipo? <strong>¡No te preocupes!</strong> Te lo armamos para que no te pierdas la oportunidad de jugar. Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
+                <strong>Reservá tu lugar ahora</strong> y sentí la emoción del fútbol en un entorno pensado para tu bienestar. ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
+            </p>
+        </section>
+       
+       
+
         <main class="container mt-5">
-            <section class="mb-5">
-                <h2 class="highlight-title">¡Predio futbolístico "La Gran 7" te da la Bienvenida!</h2>
-                <p class="highlight-paragraph">
-                    El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. Nuestro predio cuenta con <strong>7 canchas de fútbol de primer nivel</strong>, donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
-                    ¿No tienes equipo? <strong>¡No te preocupes!</strong> Te lo armamos para que no te pierdas la oportunidad de jugar. Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
-                    <strong>Reservá tu lugar ahora</strong> y sentí la emoción del fútbol en un entorno pensado para tu bienestar. ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
-                </p>
-            </section>
+          
 
           
 
@@ -52,10 +62,7 @@
                 <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4" href="/Api/ListReserva/Crear">Nueva Reserva</a>
             </section> *@
 
-            <section class="text-center mb-5"> 
-                <h2 class="text-center">Reservá tu lugar !!</h2> 
-                <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4 custom-btn" href="/Api/ListReserva/Crear">Nueva Reserva</a>
-            </section>
+          
 
            
 
