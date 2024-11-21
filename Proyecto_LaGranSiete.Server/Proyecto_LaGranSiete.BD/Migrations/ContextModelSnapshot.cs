@@ -17,7 +17,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -33,8 +33,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     b.Property<int>("CanchasId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Disponibilidad")
-                        .IsRequired()
+                    b.Property<int>("Disponibilidad")
                         .HasColumnType("int");
 
                     b.Property<string>("NombreCancha")
@@ -184,8 +183,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     b.Property<float>("Monto")
                         .HasColumnType("real");
 
-                    b.Property<float?>("Monto_Pago")
-                        .IsRequired()
+                    b.Property<float>("Monto_Pago")
                         .HasMaxLength(10)
                         .HasColumnType("real");
 
