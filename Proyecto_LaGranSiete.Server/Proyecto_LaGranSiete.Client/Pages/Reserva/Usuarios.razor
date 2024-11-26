@@ -2,6 +2,8 @@
 @using Proyecto_LaGranSiete.Client.Servicios
 @inject IHTTPServicio http
 @using Proyecto_LaGranSiete.BD.Data.Entity
+@inject NavigationManager navigationManager
+
 
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@
    
             <main>
 
-                <div class="container form-container"> 
+                <div class="container"> 
                     
                     <h2 class="text-center">Registro de Usuarios</h2> 
                     
@@ -70,7 +72,7 @@
 
                 </div>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+              
 
             </main>
         
@@ -83,5 +85,21 @@
     </html>
 
 @code {
+    private Usuario usuarios = new Usuario();
 
+    private async Task Grabar()
+    {
+        var httpRespuesta = await http.Post<Usuario>("Api/Usuario", usuarios);
+
+        if (httpRespuesta.Error)
+        {
+            var body = httpRespuesta.HttpResponseMessage;
+        }
+        navigationManager.NavigateTo("Api/Usuario");
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("Api/Usuario");
+    }
 }
