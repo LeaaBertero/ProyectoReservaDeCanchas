@@ -161,6 +161,13 @@
     transform: translateY(-2px); /* Efecto de elevación */
 }
 
+.PredioFutbolistico {
+    color: lime;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7), 0 0 10px lime;
+}
+
+
 
 
 
