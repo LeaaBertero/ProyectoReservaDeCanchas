@@ -13,7 +13,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
     public class ReservasControllers : ControllerBase
     {
-       
+
         private readonly IReservaRepositorio repositorio;
 
         public ReservasControllers(IReservaRepositorio repositorio)
@@ -25,7 +25,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         //private readonly IMapper mapper;
 
         //constructor
-       
+
 
         //EndPoint (Get) (Para realizar una solicitud)
         [HttpGet]
@@ -138,8 +138,8 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             }
 
 
-                return Ok();
-            }
-
+            return Ok();
         }
+
+    }   
 }
