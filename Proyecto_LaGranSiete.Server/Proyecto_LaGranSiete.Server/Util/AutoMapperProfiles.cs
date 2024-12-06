@@ -13,7 +13,7 @@ namespace Proyecto_LaGranSiete.Server.Util
         {
             //Data Transfer Objetct (Objeto de transferencia de datos)
             CreateMap<CrearEquipoUnoDTO, EquipoUno>();
-            CreateMap<EquipoDos, CrearEquipoDosDTO>();
+            CreateMap<EquipoUno, CrearEquipoUnoDTO>();
 
             CreateMap<CrearEquipoDosDTO, EquipoDos>();
             CreateMap<EquipoDos, CrearEquipoDosDTO>();
