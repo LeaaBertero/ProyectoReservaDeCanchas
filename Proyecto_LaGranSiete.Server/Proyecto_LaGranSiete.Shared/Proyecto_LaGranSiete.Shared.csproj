@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Proyecto_LaGranSiete.BD\Proyecto_LaGranSiete.BD.csproj" />
+  </ItemGroup>
+
 </Project>
