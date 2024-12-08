@@ -12,6 +12,7 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
     public class Repositorio<E> : IRepositorio<E> 
         where E : class, IEntityBase
     {
+        //crud del repositorio
         //Método privado (de solo lectura)
         private readonly Context context;
 
