@@ -25,11 +25,14 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //----------------------------------------------------
         //Propiedades de la tabla
         //----------------------------------------------------
-        //Para duplicar lineas Presionar (Control + D)
-
 
         //----------------------------------------------------
+        //Para duplicar lineas Presionar (Control + D)
+        //----------------------------------------------------
 
+
+
+        #region atributos de la tabla reserva
         [Required(ErrorMessage = "La fecha y hora de la reserva, es obligatoria")]
         public DateTime FechaHoraReserva { get; set; }
 
@@ -49,11 +52,13 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         [Required(ErrorMessage = "El estado de la reserva es obligatorio")]
         public string? EstadoReserva { get; set; }
 
+        #endregion 
 
+        #region id de la tabla con la que se relaciona
         //Tabla de referencia con Reserva
         public int? UsuarioId { get; set; }
         //public Usuario? Usuarios { get; set; }
-
+        #endregion
         //Lista de reservas que lo usuarios realizaron
 
 
