@@ -27,7 +27,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         public string? Nombre { get; set; }
 
         [Required(ErrorMessage = "El apellido, es obligatorio")]
-        [MaxLength(30, ErrorMessage = "Máximo número de caracteres {1}")]
+        [MaxLength(100, ErrorMessage = "Máximo número de caracteres {1}")]
         public string? Apellido { get; set; }
 
         [Required(ErrorMessage = "La fecha Nacimiento, es obligatoria")]
@@ -35,11 +35,11 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
        
 
         [Required(ErrorMessage = "El teléfono, es obligatorio - (con guión despues del 351)")]
-        [MaxLength(25, ErrorMessage = "Máximo número de caracteres {1}")]
+        [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
         public string? Telefono { get; set; } //Telefono
 
         [Required(ErrorMessage = "El e-mail, es obligatorio")]
-        [MaxLength(150, ErrorMessage = "Máximo número de caracteres {1}")]
+        [MaxLength(80, ErrorMessage = "Máximo número de caracteres {1}")]
         public string? CorreoElectronico { get; set; }
 
         [Required(ErrorMessage = "El prentesco, es obligatorio")]

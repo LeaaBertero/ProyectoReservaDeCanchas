@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241206195556_inicio")]
+    [Migration("20241209042436_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -314,13 +314,13 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.Property<string>("Apellido")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("CorreoElectronico")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<DateOnly>("FechaNacimiento")
                         .HasColumnType("date");
@@ -337,8 +337,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.Property<string>("Telefono")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
