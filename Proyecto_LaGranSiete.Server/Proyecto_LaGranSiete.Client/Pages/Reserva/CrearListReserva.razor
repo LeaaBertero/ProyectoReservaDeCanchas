@@ -24,9 +24,12 @@
                 @* <h1 class="text-cente+r border-danger border border-0">Reservá tu lugar, completando los campos</h1> *@
 
                 <div class="text-center my-4">
-                    <h1 class="display-3 text-white bg-gradient p-4 rounded-pill shadow" style="background: linear-gradient(to right, #ff7e5f, #feb47b);">Reservá tu lugar</h1>
+                    <h1 class="display-3 text-white bg-gradient p-4 rounded-pill shadow" 
+                    style="background: linear-gradient(to right, #ff7e5f, #feb47b);">Reservá tu lugar</h1>
                     <div class="text-center my-4">
-                        <p class="lead text-white bg-secondary p-4 rounded shadow text-uppercase" style="font-family: 'Arial Black', sans-serif; font-size: 2rem; background: rgba(255, 255, 255, 0.1); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+                        <p class="lead text-white bg-secondary p-4 rounded shadow text-uppercase" 
+                        style="font-family: 'Arial Black', sans-serif; font-size: 2rem; 
+                        background: rgba(255, 255, 255, 0.1); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
                             Complejo deportivo la gran 7
                         </p>
                     </div>
@@ -115,7 +118,8 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Fecha/Hora Reserva</label>
                                             <div class="col-sm-9">
-                                                <input type="datetime-local" class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+                                                <input type="datetime-local" 
+                                                class="form-control" @bind-value="@reserva.FechaHoraReserva" />
                                                 <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
                                             </div>
                                         </div>
@@ -158,7 +162,9 @@
 
                                         <!-- Botón de Reservar -->
                                         <div class="text-center mt-4">
-                                            <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
+                                            <button class="btn btn-lg btn-success 
+                                            bg-gradient w-50 text-uppercase fs-5 fw-bold text-white 
+                                            shadow-lg border-0 rounded-pill" type="submit">
                                                 Reservar ahora
                                             </button>
                                         </div>
@@ -183,7 +189,7 @@
             </main>
 
             <footer>
-
+                <p class="text-center">Todos los derechos reservados</p>
             </footer>
 
              <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
