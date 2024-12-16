@@ -16,6 +16,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
     public class Cancha : EntityBase
     {
+        #region entidad cancha
         //clave primaria de la tabla 
         public int CanchasId { get; set; }
 
@@ -37,6 +38,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //tablas que se relacionan
         public int ReservaId { get; set; }
         public Reserva Reserva { get; set; }
+        #endregion 
     }
 }
 

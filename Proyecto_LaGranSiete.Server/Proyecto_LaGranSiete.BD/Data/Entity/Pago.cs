@@ -15,6 +15,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
     public class Pago : EntityBase
     {
+        #region entidad Pago
         public int PagoId { get; set; }
 
         //Clave primaria de la tabla
@@ -68,6 +69,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
 
         //--------------------------------------------------------
+        #endregion
     }
 }
         

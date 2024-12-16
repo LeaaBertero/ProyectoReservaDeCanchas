@@ -14,6 +14,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
     public class EquipoUno : EntityBase
     {
+        #region entidad Equipo Uno
         //--------------------------------------------
         //Clave primaria de la tabla
         public int EquipoUnoId { get; set; }
@@ -32,5 +33,6 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         public List<Reserva> Reservas { get; set; } = new List<Reserva>();
         public List<Pago> Pagos { get; set; } = new List<Pago>();
+        #endregion
     }
 }

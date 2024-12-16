@@ -12,7 +12,9 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     [Index(nameof(NombreEquipoDos), Name = "EquipoDos_NombreEquipoDos", IsUnique = false)]
 
     public class EquipoDos : EntityBase
-    {   //----------------------------------------------
+    {
+        #region Entidad Equipo Dos
+        //----------------------------------------------
         //Clave primaria de la tabla
         public int EquipoDosId { get; set; }
 
@@ -33,5 +35,6 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         public List<Reserva> Reservas { get; set; } = new List<Reserva>();
         public List<Pago> Pagos { get; set; } = new List<Pago>();
+        #endregion
     }
 }

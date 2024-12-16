@@ -14,6 +14,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
     //[Index(nameof(Nombre), nameof(Apellido), nameof(UsuarioId), Name = "UsuarioId_UQ", IsUnique = true)]
     public class Usuario : EntityBase
     {
+        #region Entidad usuario
         //Clave primaria de la tabla
         [JsonIgnore] /*Para excluir la clave foranea del json*/
         public int UsuarioId { get; set; }
@@ -47,5 +48,6 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         public string? Parentesco { get; set; }
 
         //public List<Usuario> Usuarios { get; set; } 
+        #endregion
     }
 }
