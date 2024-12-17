@@ -15,7 +15,7 @@
 
         <main class="container mt-5 container d-flex justify-content-center my-5">
         
-            <h3>Modificar Reserva</h3>
+           
        
           
            
@@ -31,32 +31,32 @@
                         </div>
 
                         <!-- Duración del Alquiler -->
-                        <div class="form-group mb-3">
+                       @*  <div class="form-group mb-3">
                             <label>Duración del Alquiler</label>
                             <input type="number" class="form-control" @bind-value="@Reserva.DuracionAlquiler" />
                             <ValidationMessage For="@(() => Reserva.DuracionAlquiler)" />
-                        </div>
+                        </div> *@
 
                         <!-- Monto o Precio -->
-                        <div class="form-group mb-3">
+                      @*   <div class="form-group mb-3">
                             <label>Monto o Precio</label>
                             <input type="number" class="form-control" @bind-value="@Reserva.Monto" />
                             <ValidationMessage For="@(() => Reserva.Monto)" />
-                        </div>
+                        </div> *@
 
                         <!-- Método de Pago -->
-                        <div class="form-group mb-3">
+                       @*  <div class="form-group mb-3">
                             <label>Método de Pago</label>
                             <input type="text" class="form-control" @bind-value="@Reserva.MetodoPago" />
                             <ValidationMessage For="@(() => Reserva.MetodoPago)" />
-                        </div>
+                        </div> *@
 
                         <!-- Estado de la Reserva -->
-                        <div class="form-group mb-3">
+                       @*  <div class="form-group mb-3">
                             <label>Estado de la Reserva</label>
                             <input type="text" class="form-control" @bind-value="@Reserva.EstadoReserva" />
                             <ValidationMessage For="@(() => Reserva.EstadoReserva)" />
-                        </div>
+                        </div> *@
 
                         <!-- Botón de Confirmar Reserva -->
                         <div class="text-center mt-4">
@@ -74,7 +74,11 @@
         
 
         <footer>
-            <p>Todos los derechos reservados</p>
+            
+            <div class="text-center">
+                <p>Todos los derechos reservados</p>
+            </div>
+
         </footer>
 
     </body>
