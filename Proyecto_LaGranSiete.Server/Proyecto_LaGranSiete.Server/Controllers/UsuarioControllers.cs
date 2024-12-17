@@ -9,21 +9,29 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 {
     [ApiController]
     [Route("Api/Usuario")]
+
     public class UsuarioControllers : ControllerBase
     {
+        #region Campo context
         private readonly Context context;
+        #endregion
 
+        #region Constructor
         public UsuarioControllers(Context context)      
         {
             this.context = context;
         }
+        #endregion
 
+        #region Get usuario
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get()
         {
             return await context.Usuarios.ToListAsync();
         }
+        #endregion
 
+        #region Get for ID
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Usuario>> Get(int id)
         {
@@ -37,7 +45,9 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
             //return lean;
         }
+        #endregion
 
+        #region Post Usuario
         [HttpPost]
         public async Task<ActionResult<int>> Post(Usuario entidad)
         {
@@ -52,10 +62,10 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
                 return BadRequest(err.Message);
             }
-
-
-
         }
+        #endregion
+
+
 
         //[HttpPut("{id:int}")]
         //public async Task<ActionResult> Put(int id,[FromBody] Usuario entidad) 
@@ -64,7 +74,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         //    {
         //        return BadRequest("Datos incorrectos");
         //    }
-             
+
         //    var lean = await context.Usuarios.Where(e=> entidad.Id==id).FirstOrDefaultAsync();
 
         //    if (lean == null)
@@ -112,8 +122,8 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         //    return Ok();
 
         //}
-       
-
     }
-
 }
+
+
+
