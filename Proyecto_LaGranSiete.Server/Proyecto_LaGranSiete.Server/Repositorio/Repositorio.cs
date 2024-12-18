@@ -9,8 +9,8 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
 {
     //Repositorio_ es una clase especializada en hacer un CRUD sobre una tabla cualquiera de la base de datos
     //<E> => (Entidad)
-    public class Repositorio<E> : IRepositorio<E> 
-        where E : class, IEntityBase
+    public class Repositorio<E> : IRepositorio<E> where E : class, IEntityBase
+
     {
         //crud del repositorio
         //Método privado (de solo lectura)
@@ -18,17 +18,22 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
 
         //Constructor de la clase Repositorio
         //posteriormente hacer (Control + .) en context, y elegir la opcion Crer y asignar campo Context
+       
+        #region constructor
         public Repositorio(Context Context)
         {
             context = Context;
         }
+        #endregion
 
+        #region Select
         public async Task<List<E>> Select() //Task == "Tarea"
         {
             return await context.Set<E>().ToListAsync();
         }
+        #endregion
 
-
+        #region Insert
         public async Task<int> Insert(E entidad)
         {
             try
@@ -45,8 +50,9 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
                 throw Err;
             }
         }
+        #endregion
 
-
+        #region Update
         public async Task<bool> Update(int id, E entidad)
         {
             if (id == entidad.Id)
@@ -91,8 +97,9 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
                 throw e;
             }
         }
+        #endregion
 
-
+        #region SelectById
         public async Task<E> SelectById(int id)
         {
             E? lean = await context.Set<E>().AsNoTracking() // AsNoTracking() == (Para evitar que no quede en memoria)
@@ -114,12 +121,15 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
             await context.SaveChangesAsync();
             return true;
         }
+        #endregion
 
+        #region Existe
         public async Task<bool> Existe(int id)
         {
             var existe = await context.Set<E>().AnyAsync(x => x.Id == id);
             return existe;
         }
+        #endregion
     }
 }
           
