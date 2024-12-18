@@ -14,14 +14,17 @@ namespace Proyecto_LaGranSiete.BD.Data
     public class Context : DbContext
     {
         //constructor del Context (Base de datos)
+        #region Construcctor del Context (Base de datos)
         public Context(DbContextOptions options) : base(options)
         {
             //para realizar este constructor hacer control punto + (.) y elegir "Generar contructor con options"
         }
-        
+        #endregion
+
         //-------------------------------------------
         //Tablas o entidades de la base de datos
 
+        #region entidades
         //Nota importante: Las entidades van en singular y la propiead en plural
         public DbSet<Cancha> Canchas { get; set; }
         public DbSet<Equipo> Equipos { get; set; }
@@ -31,7 +34,7 @@ namespace Proyecto_LaGranSiete.BD.Data
         public DbSet<Partido> Partidos { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
+        #endregion
 
 
 
@@ -41,6 +44,7 @@ namespace Proyecto_LaGranSiete.BD.Data
 
 
         //codigo que evita que un registro de la base de datos, pueda borrarse en cascada
+        #region OnModelCreating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Éste codigo sirve para evitar que se borren los datos en cascada en la base de datos
@@ -55,6 +59,7 @@ namespace Proyecto_LaGranSiete.BD.Data
 
             base.OnModelCreating(modelBuilder);
         }
+        #endregion
     }
 }
 

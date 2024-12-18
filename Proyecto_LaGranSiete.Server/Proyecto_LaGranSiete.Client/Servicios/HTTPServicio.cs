@@ -13,10 +13,13 @@ namespace Proyecto_LaGranSiete.Client.Servicios
         private readonly HttpClient http;
 
         //constructor
+        #region Contructor de la clase HttpServicio
         public HTTPServicio(HttpClient http) //<-- inyección de dependencia
         {
             this.http = http;   
         }
+        #endregion
+
 
         public async Task<HTTPRespuesta<T>> Get<T>(string url)
         {
