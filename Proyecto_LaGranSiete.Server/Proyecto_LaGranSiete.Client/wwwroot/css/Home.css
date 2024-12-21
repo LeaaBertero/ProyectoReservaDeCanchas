@@ -1,1 +1,128 @@
-﻿
+﻿/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+        header .logo img {
+            width: 50px;
+            margin-right: 1em;
+        }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        background: #444;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+
+        nav ul li a:hover {
+            background: #555;
+        }
+
+.hero {
+    position: relative;
+    height: 400px;
+    background: url('img/hero.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .hero .hero-text {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2em;
+        border-radius: 5px;
+    }
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    background: #f90;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+    .btn:hover {
+        background: #fb3;
+    }
+
+.services, .testimonials {
+    padding: 2em;
+}
+
+    .services h2, .testimonials h2 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+.service, .testimonial {
+    background: #f4f4f4;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+    .service i, .testimonial img {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.contact-info, .social-media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .contact-info, .social-media {
+        flex-direction: column;
+    }
+}

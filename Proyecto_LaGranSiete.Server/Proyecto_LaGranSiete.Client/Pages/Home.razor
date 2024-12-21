@@ -10,22 +10,89 @@
             <title>Complejo La Gran 7 - Home</title>
 
             @* enlace a css *@
-            <link href="./css" rel="stylesheet" />
+            <link href="./css/Home.css" rel="stylesheet" />
         </head>
 
         <body>
 
-            <header>
-                <h1>Página principal "La Gran 7"</h1>
+            <header> 
+                
+                <div class="logo"> 
+                    <img src="img/logo.png" alt="Logo La Gran 7"> 
+                    <h1>La Gran 7</h1>
+                </div> 
+
+                <nav> 
+                    <ul> 
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/reservas">Reservas</a></li>
+                        <li><a href="/contacto">Contacto</a></li>
+                    </ul> 
+                </nav> 
+
             </header>
+
+            <main> 
+
+                <section class="hero"> 
+
+                    <img src="img/hero.jpg" alt="Imagen de bienvenida"> 
+            
+                    <div class="hero-text"> 
+                        <h2>Bienvenidos a La Gran 7</h2>
+                        <p>Las mejores canchas de fútbol para tus partidos.</p>
+                <a href="/Api/ListReserva/Crear" class="btn">Reservar Ahora</a>
+            </div> 
         
-            <main>
+                </section> 
+        
+                <section class="services"> 
+                    <h2>Nuestros Servicios</h2> 
+            
+                    <div class="service"> 
+                        <i class="fas fa-futbol"></i> 
+                        <h3>Alquiler de Canchas</h3> 
+                        <p>Cancha de césped sintético con iluminación nocturna.</p> 
+                    </div> 
+            
+                    <div class="service"> 
+                        <i class="fas fa-shower"></i> 
+                        <h3>Vestuarios</h3> 
+                        <p>Vestuarios completamente equipados con duchas.</p> 
+                    </div> 
+                </section> 
 
+                <section class="testimonials"> 
+                    <h2>Testimonios</h2> 
+                
+                    <div class="testimonial"> 
+                        <img src="img/testimonial1.jpg" alt="Cliente"> 
+                        <p>"Excelentes instalaciones y atención."</p> 
+                        <h3>Juan Pérez</h3> 
+                    </div> 
+                    <div class="testimonial"> 
+                        <img src="img/testimonial2.jpg" alt="Cliente"> 
+                        <p>"Las mejores canchas para jugar con amigos."</p>
+                        <h3>María Gómez</h3> 
+                    </div> 
+                
+                </section> 
+            
             </main>
-               
-
-            <footer>
-               
+    
+            <footer> 
+    
+                <div class="contact-info"> 
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: contacto@lagran7.com</p> 
+                </div> 
+        
+                <div class="social-media"> 
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a> 
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div> 
+    
             </footer>
 
         </body>
