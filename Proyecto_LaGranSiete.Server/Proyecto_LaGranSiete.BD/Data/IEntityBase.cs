@@ -2,6 +2,8 @@
 {
     public interface IEntityBase
     {
+        #region Interfaz de la Entidad
         int Id { get; set; }
+        #endregion
     }
 }

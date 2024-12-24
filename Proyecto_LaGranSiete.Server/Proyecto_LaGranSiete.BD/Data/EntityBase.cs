@@ -12,8 +12,10 @@ namespace Proyecto_LaGranSiete.BD.Data
     //dónde vamos a obtener la herencia de (EntityBase), IEntityBase 
     public class EntityBase : IEntityBase
     {
+        #region Entidad Base para todas las tablas
         //Id de cada una de las tablas
         //[Required(ErrorMessage = "El id es obligatorio")]
         public int Id { get; set; }
+        #endregion
     }
 }
