@@ -107,7 +107,9 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
 
             return lean;
         }
+        #endregion
 
+        #region Borrar
         public async Task<bool> Borrar(int id)
         {                                            //(expresión en lambda)
             var lean = await SelectById(id);
