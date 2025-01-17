@@ -92,13 +92,13 @@ namespace Proyecto_LaGranSiete.Client.Servicios
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
+    }
+}
 
        
 
 
-    }
     
-}
           
 
 
