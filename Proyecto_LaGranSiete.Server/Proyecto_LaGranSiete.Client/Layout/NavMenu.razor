@@ -7,65 +7,63 @@
     </div>
 </div> *@
 
+<style>
+    /* Transición suave para el contenido del menú */
+    .nav-item a {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .nav-item a:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+
+    /* Transición suave para el contenido de la sección */
+    .section-content {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+        .section-content.show {
+            opacity: 1;
+        }
+</style>
+
 <div>
-    <nav class="flex-column">
-        <div class="nav-item px-1">
-            <NavLink class="nav-link text-light" href="/" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home Page
+    <nav class="flex-column bg-dark p-4 rounded shadow">
+        <div class="nav-item py-3">
+            <NavLink class="nav-link text-light d-flex align-items-center" href="/" Match="NavLinkMatch.All" style="border-bottom: 2px solid #00ff00;">
+                <span class="bi bi-house-door-fill" aria-hidden="true"></span>
+                <span class="ms-3">Home Page</span>
             </NavLink>
         </div>
-        <div class="nav-item px-1">
-            <NavLink class="nav-link text-light" href="Api/Usuario">
-                <span class="bi bi-calendar-check-fill-nav-menu text-neon" aria-hidden="true"></span> <strong>Usuarios</strong>
+        <div class="nav-item py-3">
+            <NavLink class="nav-link text-light d-flex align-items-center" href="Api/Usuario" style="border-bottom: 2px solid #00ff00;">
+                <span class="bi bi-people-fill" aria-hidden="true"></span>
+                <span class="ms-3"><strong>Usuarios</strong></span>
             </NavLink>
         </div>
-        <div class="nav-item px-1">
-            <NavLink class="nav-link text-light" href="Api/Reservas">
-                <span class="bi bi-calendar-check-fill-nav-menu text-neon" aria-hidden="true"></span> <strong>Reservas</strong>
+        <div class="nav-item py-3">
+            <NavLink class="nav-link text-light d-flex align-items-center" href="Api/Reservas" style="border-bottom: 2px solid #00ff00;">
+                <span class="bi bi-calendar-check-fill" aria-hidden="true"></span>
+                <span class="ms-3"><strong>Reservas</strong></span>
             </NavLink>
-        </div> 
-        <div class="nav-item px-1">
-            <NavLink class="nav-link text-light" href="https://localhost:7178/swagger" target="_blank">
-                <span class="bi bi-code-slash-nav-menu text-neon" aria-hidden="true"></span> Swagger
+        </div>
+        <div class="nav-item py-3">
+            <NavLink class="nav-link text-light d-flex align-items-center" href="https://localhost:7178/swagger" target="_blank" style="border-bottom: 2px solid #00ff00;">
+                <span class="bi bi-code-slash" aria-hidden="true"></span>
+                <span class="ms-3">Swagger</span>
             </NavLink>
         </div>
     </nav>
+    <div class="section-content">
+        <!-- Aquí va el contenido de la sección que deseas mostrar -->
+    </div>
 </div>
 
-<style>
-    .text-neon {
-        color: #39ff14; /* Neon Green */
-        transition: color 0.3s ease-in-out;
-    }
 
-    .nav-link:hover .text-neon {
-        color: #00bfff; /* Neon Blue */
-    }
 
-    .nav-link {
-        transition: transform 0.2s ease-in-out;
-    }
 
-    .nav-link:hover {
-        transform: scale(1.1);
-    }
-
-    .navbar {
-        background-color: #2c2c2c; /* Dark Background */
-    }
-
-    .navbar-brand {
-        color: #39ff14; /* Neon Green */
-    }
-
-    .navbar-toggler {
-        border: none;
-    }
-
-    .navbar-toggler-icon {
-        color: #39ff14; /* Neon Green */
-    }
-</style>
 
 @code {
     private bool collapseNavMenu = true;
