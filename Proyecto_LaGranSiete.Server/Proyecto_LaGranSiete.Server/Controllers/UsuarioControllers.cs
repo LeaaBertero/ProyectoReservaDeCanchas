@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Proyecto_LaGranSiete.BD.Data;
 using Proyecto_LaGranSiete.BD.Data.Entity;
 using Proyecto_LaGranSiete.Server.Repositorio;
+using Proyecto_LaGranSiete.Shared.DTO;
 
 namespace Proyecto_LaGranSiete.Server.Controllers
 {
@@ -49,10 +50,19 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
         #region Post Usuario
         [HttpPost]
-        public async Task<ActionResult<int>> Post(Usuario entidad)
+        public async Task<ActionResult<int>> Post(CrearUsuarioDTO entidadDTO)
         {
             try
             {
+                Usuario entidad = new Usuario();
+
+                entidad.Nombre = entidadDTO.Nombre;
+                entidad.Apellido = entidadDTO.Apellido;
+                entidad.FechaNacimiento = entidadDTO.FechaNacimiento;
+                entidad.Telefono = entidadDTO.Telefono?.ToString();
+                entidad.CorreoElectronico = entidadDTO.CorreoElectronico;
+                entidad.Parentesco = entidadDTO.Parentesco;
+
                 context.Usuarios.Add(entidad);
                 await context.SaveChangesAsync();
                 return entidad.Id;

@@ -4,84 +4,86 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Modificar reserva</title>
-    </head>
-    <body>
+<head>
+    <title>Modificar reserva</title>
+</head>
+<body>
 
-        <header>
-            <h1 class="text-center text-uppercase bg-warning font-monospace">Modificar Reserva</h1>
-        </header>
+    <header>
+        <h1 class="text-center text-uppercase bg-warning font-monospace">Modificar Reserva</h1>
+    </header>
 
-        <main class="container mt-5 container d-flex justify-content-center my-5">
-        
-           
-       
-          
-           
-               <div class="col-lg-6 col-md-8 col-sm-10 bg-light p-4 shadow rounded">
-                    <EditForm Model="Reserva" OnValidSubmit="Grabar">
-                        <DataAnnotationsValidator />
+    <main class="container mt-5 container d-flex justify-content-center my-5">
 
-                        <!-- Fecha y Hora de Reserva -->
-                        <div class="form-group mb-3">
-                            <label>Fecha y Hora de Reserva</label>
-                            <input type="datetime-local" class="form-control" @bind-value="@Reserva.FechaHoraReserva" />
-                            <ValidationMessage For="@(() => Reserva.FechaHoraReserva)" />
-                        </div>
 
-                        <!-- Duración del Alquiler -->
-                       @*  <div class="form-group mb-3">
+
+
+
+        <div class="col-lg-6 col-md-8 col-sm-10 bg-light p-4 shadow rounded">
+            <EditForm Model="Reserva" OnValidSubmit="Grabar">
+                <DataAnnotationsValidator />
+
+                <!-- Fecha y Hora de Reserva -->
+                <div class="form-group mb-3">
+                    <label>Fecha y Hora de Reserva</label>
+                    <input type="datetime-local" class="form-control" @bind-value="@Reserva.FechaHoraReserva" />
+                    <ValidationMessage For="@(() => Reserva.FechaHoraReserva)" />
+                </div>
+
+                <!-- Duración del Alquiler -->
+                @*  <div class="form-group mb-3">
                             <label>Duración del Alquiler</label>
                             <input type="number" class="form-control" @bind-value="@Reserva.DuracionAlquiler" />
                             <ValidationMessage For="@(() => Reserva.DuracionAlquiler)" />
                         </div> *@
 
-                        <!-- Monto o Precio -->
-                      @*   <div class="form-group mb-3">
+                <!-- Monto o Precio -->
+                @*   <div class="form-group mb-3">
                             <label>Monto o Precio</label>
                             <input type="number" class="form-control" @bind-value="@Reserva.Monto" />
                             <ValidationMessage For="@(() => Reserva.Monto)" />
                         </div> *@
 
-                        <!-- Método de Pago -->
-                       @*  <div class="form-group mb-3">
+                <!-- Método de Pago -->
+                @*  <div class="form-group mb-3">
                             <label>Método de Pago</label>
                             <input type="text" class="form-control" @bind-value="@Reserva.MetodoPago" />
                             <ValidationMessage For="@(() => Reserva.MetodoPago)" />
                         </div> *@
 
-                        <!-- Estado de la Reserva -->
-                       @*  <div class="form-group mb-3">
+                <!-- Estado de la Reserva -->
+                @*  <div class="form-group mb-3">
                             <label>Estado de la Reserva</label>
                             <input type="text" class="form-control" @bind-value="@Reserva.EstadoReserva" />
                             <ValidationMessage For="@(() => Reserva.EstadoReserva)" />
                         </div> *@
 
-                        <!-- Botón de Confirmar Reserva -->
-                        <div class="text-center mt-4">
-                            <button class="btn btn-lg btn-success bg-gradient w-100 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
-                                Confirmar
-                            </button>
-                        </div>
-
-                    </EditForm>
-
+                <!-- Botón de Confirmar Reserva -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-lg btn-success bg-gradient w-100 text-uppercase
+                        fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" 
+                        type="submit">
+                        Confirmar
+                    </button>
                 </div>
 
-             </main>
+            </EditForm>
 
-        
+        </div>
 
-        <footer>
-            
-            <div class="text-center">
-                <p>Todos los derechos reservados</p>
-            </div>
+    </main>
 
-        </footer>
 
-    </body>
+
+    <footer>
+
+        <div class="text-center">
+            <p>Todos los derechos reservados</p>
+        </div>
+
+    </footer>
+
+</body>
 </html>
 
 @code {
@@ -96,7 +98,7 @@
 
     private async Task Mostrar()
     {
-        var respuesta = await http.Get<Reserva>($"Api/Reservas/{ReservasId}");
+        var respuesta = await http.Get<Reserva>($"Api/Reservas/Editar{ReservasId}");
 
         if (!respuesta.Error)
         {

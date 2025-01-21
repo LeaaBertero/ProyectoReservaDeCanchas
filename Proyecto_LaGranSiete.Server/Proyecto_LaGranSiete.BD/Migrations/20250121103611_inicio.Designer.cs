@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250119074102_inicio")]
+    [Migration("20250121103611_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -322,8 +322,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
 
-                    b.Property<DateOnly>("FechaNacimiento")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("FechaNacimiento")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

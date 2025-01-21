@@ -1,217 +1,218 @@
 ﻿@page "/Api/Reservas"
 @inject IHTTPServicio http
-
+@inject NavigationManager navigationManager
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-   
-    <head>
-        <title>La Gran Siete - Oficial</title>
 
-        @* hoja de estilo para la pagina principal *@
-        <link href="./css/ListReserva.css" rel="stylesheet" />
-    </head>
+<head>
+    <title>La Gran Siete - Oficial</title>
 
-
-
-    <body>
-
-        <header >
-            <h1 >Prédio futbolístico <span >La Gran 7</span></h1>
+    @* hoja de estilo para la pagina principal *@
+    <link href="./css/ListReserva.css" rel="stylesheet" />
+</head>
 
 
 
-            <h2>Fútbol y Amistad en Cada Partido.. <span >reservá tu lugar</span> !!</h2>
+<body>
 
-        </header>
-
-
-        <section>
-            <div >
-                <div >
-                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg"/>
-                </div>
-            </div>
-        </section>
+    <header>
+        <h1>Lista de reservas <span>La Gran 7</span></h1>
 
 
-        <!-- #region Boton de realizar la reserva -->
-       @*  <section class="text-center mb-5">
+
+        <h2>Fútbol y Amistad en Cada Partido.. <span>reservá tu lugar</span> !!</h2>
+
+    </header>
+
+
+
+
+
+    <!-- #region Boton de realizar la reserva -->
+    @*  <section class="text-center mb-5">
             <h2 class="text-center">Reservá tu lugar en la cancha !</h2>
             <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4 custom-btn"
            href="/Api/ListReserva/Crear"> ֎ Reservá yá!! ֎ </a>
         </section> *@
 
-        <section>
-            <h2>
-                Reservá tu lugar en la cancha!
-            </h2>
-
-           
-        </section>
+    <section>
+        <h2>
+            Reservá tu lugar en la cancha!
+        </h2>
 
 
-
-        <!-- #endregion -->
+    </section>
 
 
 
-        <section>
-            <h2>
-                ¡Predio futbolístico "La Gran 7" te da la Bienvenida!
-            </h2>
-            <p>
-                El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. 
-                Nuestro predio cuenta con 7 canchas de fútbol de primer nivel,
-                donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
-                ¿No tienes equipo? ¡No te preocupes! 
-                Te lo armamos para que no te pierdas la oportunidad de jugar.
-                Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades
-                hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
-                Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar.
-                ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
-            </p>
+    <!-- #endregion -->
 
-        </section>
 
-        <div >
-        <a class="btn btn-success" href="/Api/ListReserva/Crear">
-                ֎ Reservá yá!! ֎
-            </a>
-        </div>
-       
-       
 
-        <main>
-          
+    <section>
+        <h2>
+            ¡Predio futbolístico "La Gran 7" te da la Bienvenida!
+        </h2>
+        <p>
+            El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego.
+            Nuestro predio cuenta con 7 canchas de fútbol de primer nivel,
+            donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
+            ¿No tienes equipo? ¡No te preocupes!
+            Te lo armamos para que no te pierdas la oportunidad de jugar.
+            Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades
+            hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
+            Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar.
+            ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
+        </p>
 
-          
+    </section>
 
-            @*<section class="text-center mb-5">
+    <div>
+        <a class="btn btn-success" href="/Api/Reserva/Crear">
+            ֎ Reservá yá!! ֎
+        </a>
+    </div>
+
+
+
+    <main>
+
+
+
+
+        @*<section class="text-center mb-5">
                 <h2 class="text-center">Reservá tu lugar !!</h2>
                 <a class="btn btn-success btn-lg text-uppercase w-50 p-2 mb-4" href="/Api/ListReserva/Crear">Nueva Reserva</a>
             </section> *@
 
-          
 
-           
 
-            @* <h4 class="bg-black p-3 text-center  text-white">Lista de reservas</h4> *@
-            <h4>🏆⚽ Lista de Reservas ⚽ 🏆</h4>
-  
-            <div>
-                    
-                <table >
-                        
-                    <thead>
-                        <tr>
-                            <th>Fecha/hora reserva</th>
-                            <th>Tiempo de alquiler (Hs) </th>
-                            <th>Precio por alquiler</th>
-                            <th>Método de pago</th>
-                            <th>Estado</th>
-                            <th>Modificar / Eliminar</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
 
-                        @if (Mensaje == "")
+        @* <h4 class="bg-black p-3 text-center  text-white">Lista de reservas</h4> *@
+        <h4>🏆⚽ Lista de Reservas ⚽ 🏆</h4>
+
+        <div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Fecha/hora reserva</th>
+                        <th>Tiempo de alquiler (Hs) </th>
+                        <th>Precio por alquiler</th>
+                        <th>Método de pago</th>
+                        <th>Estado</th>
+                        <th>Modificar / Eliminar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Mensaje == "")
+                    {
+                        @if (listaReserva == null)
                         {
-                            @if (listaReserva == null)
-                            {
-                                <tr>
-                                    <td>Buscando reservas, aguarde...</td>
-                                </tr>
-                            }
-                            else if (listaReserva.Count == 0)
-                            {
-                                <tr>
-                                    <td>No existen reservas realizadas</td>
-                                </tr>
-                            }
-                            else
-                            {
-                                @foreach (var item in listaReserva)
-                                {
-                                    <tr>
-                                        
-                                        <td>@item.FechaHoraReserva</td>
-                                        <td>@item.DuracionAlquiler</td>
-                                        <td>@item.Monto</td>
-                                        <td>@item.MetodoPago</td>
-                                        <td>@item.EstadoReserva</td>
-                                        
-                                        <td>
-                                            <a href="/Api/Reservas/Editar/@item.Id">Modificar</a>
-                                            <button class="btn btn-danger btn-sm mb-2" @onclick="()=>Eliminar(item)">Eliminar</button>
-                                        </td>
-                                    
-                                    </tr>
-                                }
-                            }
+                            <tr>
+                                <td>Buscando reservas, aguarde...</td>
+                            </tr>
+                        }
+                        else if (listaReserva.Count == 0)
+                        {
+                            <tr>
+                                <td>No existen reservas realizadas</td>
+                            </tr>
                         }
                         else
                         {
-                            <tr><td colspan="6">Error: @Mensaje</td></tr>
+                            @foreach (var item in listaReserva)
+                            {
+                                <tr>
+
+                                    <td>@item.FechaHoraReserva</td>
+                                    <td>@item.DuracionAlquiler</td>
+                                    <td>@item.Monto</td>
+                                    <td>@item.MetodoPago</td>
+                                    <td>@item.EstadoReserva</td>
+
+                                    <td>
+                                        <a href="/Api/Reservas/Editar/ @item.Id">Modificar</a>
+                                    </td>
+
+                                    <td>
+                                        <button class="btn btn-danger btn-sm mb-2" @onclick="()=>Eliminar(item)">Eliminar</button>
+                                    </td>
+
+                                    
+
+
+
+                                </tr>
+                            }
                         }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6">Error: @Mensaje</td></tr>
+                    }
 
-                    </tbody>
+                </tbody>
 
-                </table>
-        
-            </div>
+            </table>
 
+        </div>
+
+        <div>
             <div>
                 <div>
-                    <div>
-                        <h2>La gran 7 - Complejo deportivo</h2>
-                    </div>
-                    <div>
-                        <h2>La gran 7  - Complejo deportivo</h2>
-                    </div>
-                    <div>
-                        <h2>La gran 7 - Complejo deportivo</h2>
-                    </div>
+                    <h2>La gran 7 - Complejo deportivo</h2>
+                </div>
+                <div>
+                    <h2>La gran 7  - Complejo deportivo</h2>
+                </div>
+                <div>
+                    <h2>La gran 7 - Complejo deportivo</h2>
                 </div>
             </div>
+        </div>
+
+        <div>
 
             <div>
-                
-                <div>
-                
-                    <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
-                        <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
-                            <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
-                            @* <div class="d-flex justify-content-around">
+
+                <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
+                    <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
+                        <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
+                        @* <div class="d-flex justify-content-around">
                                 <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
                                 <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
                             </div> *@
-                        </div>
-                    </Confirmacion>
-            
-                </div>
-            
+                    </div>
+                </Confirmacion>
+
             </div>
 
-        </main>
-        
-       
-        <footer >
-            <p>Todos los derechos reservados</p>
-        </footer>
+        </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </main>
 
-    </body>
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
 
 </html>
 
 
-               
+
 @code {
 
     List<Reserva> listaReserva;
@@ -232,7 +233,7 @@
     {
         // var resp = await http.Get<List<Reserva>>("/Api/Reservas");
 
-        HTTPRespuesta<List<Reserva>> resp = 
+        HTTPRespuesta<List<Reserva>> resp =
         await http.Get<List<Reserva>>("/Api/Reservas");
 
         if (!resp.Error)
@@ -241,8 +242,8 @@
         }
         else
         {
-            Mensaje = await resp.ObtenerError(); 
-        } 
+            Mensaje = await resp.ObtenerError();
+        }
     }
 
     //metodo que elimina la rserva
@@ -261,18 +262,18 @@
         eliminar.Ver();
     }
 
-    
+
     // codigo de prueba de eliminacion de una reserva
-   
-   
+
+
 }
 
 
 
-   
 
 
-     
+
+
 
 
 

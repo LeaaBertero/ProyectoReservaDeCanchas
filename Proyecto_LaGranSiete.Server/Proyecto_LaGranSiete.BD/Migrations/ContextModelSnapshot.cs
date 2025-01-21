@@ -319,8 +319,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
 
-                    b.Property<DateOnly>("FechaNacimiento")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("FechaNacimiento")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

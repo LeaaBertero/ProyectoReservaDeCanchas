@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_LaGranSiete.Shared.DTO
 {
-    public class CrearCanchasDTO
+    public class CrearCanchaDTO
     {
         [Required(ErrorMessage = "El nombre de la cancha es obligatorio")]
         [MaxLength(20, ErrorMessage = "Máximo número de caracteres {1}")]

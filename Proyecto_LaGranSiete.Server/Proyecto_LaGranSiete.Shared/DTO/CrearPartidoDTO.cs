@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_LaGranSiete.Shared.DTO
 {
-    public class CrearPartidosDTO
+    public class CrearPartidoDTO
     {
         [Required(ErrorMessage = "La fecha y hora del partido es obligatorio")]
         [MaxLength(30, ErrorMessage = "Máximo número de caracteres {1}")]

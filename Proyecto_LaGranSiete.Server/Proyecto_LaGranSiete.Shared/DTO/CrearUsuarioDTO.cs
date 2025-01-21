@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_LaGranSiete.Shared.DTO
 {
-    public class CrearUsuariosDTO
+    public class CrearUsuarioDTO
     {
         [Required(ErrorMessage = "El campo nombre, es obligatorio")]
         [MaxLength(100, ErrorMessage = "Máximo número de caracteres {1}")]

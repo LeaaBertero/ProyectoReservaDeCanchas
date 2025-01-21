@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_LaGranSiete.Shared.DTO
 {
-    public class CrearPagosDTO
+    public class CrearPagoDTO
     {
         [Required(ErrorMessage = "El monto de pago es obligatorio")]
         [MaxLength(10, ErrorMessage = "Máximo número de caracteres {1}")]

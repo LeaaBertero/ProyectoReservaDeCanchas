@@ -81,11 +81,13 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             {
                 return await repositorio.Insert(entidad);
             }
-            catch (Exception ErrorMessage)
+            catch (Exception err)
             {
                 //InnerException = quiere decir que el error vino por un tercero, en este caso por la base de datos
-                return BadRequest(ErrorMessage.Message /*+ "  " + ErrorMessage.InnerException.Message*/);
+                //return BadRequest(ErrorMessage.Message);
                 //throw;
+
+                return BadRequest(err.Message);
             }
         }
 
