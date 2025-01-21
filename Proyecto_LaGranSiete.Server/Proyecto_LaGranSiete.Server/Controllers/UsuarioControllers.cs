@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_LaGranSiete.BD.Data;
@@ -15,12 +16,15 @@ namespace Proyecto_LaGranSiete.Server.Controllers
     {
         #region Campo context
         private readonly Context context;
+        private readonly IMapper mapper;
         #endregion
 
         #region Constructor
-        public UsuarioControllers(Context context)      
+        public UsuarioControllers(Context context,
+                                  IMapper mapper)      
         {
             this.context = context;
+            this.mapper = mapper;
         }
         #endregion
 
@@ -54,14 +58,16 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         {
             try
             {
-                Usuario entidad = new Usuario();
+                //Usuario entidad = new Usuario();
 
-                entidad.Nombre = entidadDTO.Nombre;
-                entidad.Apellido = entidadDTO.Apellido;
-                entidad.FechaNacimiento = entidadDTO.FechaNacimiento;
-                entidad.Telefono = entidadDTO.Telefono?.ToString();
-                entidad.CorreoElectronico = entidadDTO.CorreoElectronico;
-                entidad.Parentesco = entidadDTO.Parentesco;
+                //entidad.Nombre = entidadDTO.Nombre;
+                //entidad.Apellido = entidadDTO.Apellido;
+                //entidad.FechaNacimiento = entidadDTO.FechaNacimiento;
+                //entidad.Telefono = entidadDTO.Telefono?.ToString();
+                //entidad.CorreoElectronico = entidadDTO.CorreoElectronico;
+                //entidad.Parentesco = entidadDTO.Parentesco;
+
+                var entidad = mapper.Map<Usuario>(entidadDTO);
 
                 context.Usuarios.Add(entidad);
                 await context.SaveChangesAsync();
