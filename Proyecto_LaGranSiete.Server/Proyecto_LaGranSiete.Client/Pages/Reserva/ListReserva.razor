@@ -15,23 +15,22 @@
 
 
 
-    <body class="p-3 mb-2 bg-black text-secondary">
+    <body>
 
-        <header class="text-center py-4 bg-dark text-white">
-            <h1 class="text-uppercase">Prédio futbolístico <span class="PredioFutbolistico">La Gran 7</span></h1>
+        <header >
+            <h1 >Prédio futbolístico <span >La Gran 7</span></h1>
 
 
 
-            <h2>Fútbol y Amistad en Cada Partido.. <span class="text-uppercase blink pulse" 
-                style="color: lime; font-size: 1em; text-shadow: 2px 2px 5px white;">reservá tu lugar</span> !!</h2>
+            <h2>Fútbol y Amistad en Cada Partido.. <span >reservá tu lugar</span> !!</h2>
 
         </header>
 
 
-        <section id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg" class="d-block w-100" alt="..." />
+        <section>
+            <div >
+                <div >
+                    <img src="https://pbs.twimg.com/profile_images/474283737388027904/YCqhaIHu_400x400.jpeg"/>
                 </div>
             </div>
         </section>
@@ -44,9 +43,8 @@
            href="/Api/ListReserva/Crear"> ֎ Reservá yá!! ֎ </a>
         </section> *@
 
-        <section class="text-center mb-5">
-            <h2 class="text-center my-5 p-3 rounded shadow" style="background: linear-gradient(90deg, #ff6a00, #ee0979);
-            color: #fff; font-weight: bold; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); display: inline-block;">
+        <section>
+            <h2>
                 Reservá tu lugar en la cancha!
             </h2>
 
@@ -59,30 +57,33 @@
 
 
 
-        <section class="d-flex flex-column align-items-center mb-5">
-            <h2 class="highlight-title text-center my-3 p-3 rounded shadow" style="background: linear-gradient(90deg, #ff6a00, #ee0979);
-            color: #fff; font-weight: bold; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); display: inline-block;">
+        <section>
+            <h2>
                 ¡Predio futbolístico "La Gran 7" te da la Bienvenida!
             </h2>
-            <p class="highlight-paragraph text-center p-3 rounded shadow" >
-                El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. Nuestro predio cuenta con <strong>7 canchas de fútbol de primer nivel</strong>, donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
-                ¿No tienes equipo? <strong>¡No te preocupes!</strong> Te lo armamos para que no te pierdas la oportunidad de jugar. Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
-                <strong>Reservá tu lugar ahora</strong> y sentí la emoción del fútbol en un entorno pensado para tu bienestar. ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
+            <p>
+                El lugar ideal para vivir la pasión del fútbol sin importar tu edad o nivel de juego. 
+                Nuestro predio cuenta con 7 canchas de fútbol de primer nivel,
+                donde tanto hombres como mujeres pueden disfrutar de su deporte favorito en un ambiente inclusivo, seguro y lleno de energía.
+                ¿No tienes equipo? ¡No te preocupes! 
+                Te lo armamos para que no te pierdas la oportunidad de jugar.
+                Aquí, todos son bienvenidos, desde los que buscan perfeccionar sus habilidades
+                hasta aquellos que solo quieren pasar un buen rato entre amigos y nuevos compañeros de juego.
+                Reservá tu lugar ahora y sentí la emoción del fútbol en un entorno pensado para tu bienestar.
+                ¡Vení a divertirte, competir y hacer nuevos amigos en la cancha!
             </p>
 
         </section>
 
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-success btn-lg text-uppercase p-2 mb-4 custom-btn shadow-lg rounded-pill text-light"
-                href="/Api/ListReserva/Crear" style="background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
-                    font-weight: bold; font-size: 1.5rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); display: inline-block;">
+        <div >
+        <a class="btn btn-success" href="/Api/ListReserva/Crear">
                 ֎ Reservá yá!! ֎
             </a>
         </div>
        
        
 
-        <main class="container mt-5">
+        <main>
           
 
           
@@ -97,22 +98,20 @@
            
 
             @* <h4 class="bg-black p-3 text-center  text-white">Lista de reservas</h4> *@
-            <h4 class="bg-gradient p-3 text-center text-white" style="background: linear-gradient(to right, green, blue); font-size: 1.5rem; font-family: 'Arial Black', sans-serif; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        🏆 ⚽ Lista de Reservas ⚽ 🏆
-            </h4>
+            <h4>🏆⚽ Lista de Reservas ⚽ 🏆</h4>
   
-            <div class="table-responsive">
+            <div>
                     
-                <table class="table table-bordered table-striped text-center">
+                <table >
                         
                     <thead>
                         <tr>
-                            <th class="p-3 text-white text-uppercase bg-black">Fecha/hora reserva</th>
-                            <th class="p-3 text-white text-uppercase bg-black">Tiempo de alquiler (Hs) </th>
-                            <th class="p-3 text-white text-uppercase bg-black">Precio por alquiler</th>
-                            <th class="p-3 text-white text-uppercase bg-black">Método de pago</th>
-                            <th class="p-3 text-white text-uppercase bg-black">Estado</th>
-                            <th class="p-3 text-white text-uppercase bg-black">Modificar / Eliminar</th>
+                            <th>Fecha/hora reserva</th>
+                            <th>Tiempo de alquiler (Hs) </th>
+                            <th>Precio por alquiler</th>
+                            <th>Método de pago</th>
+                            <th>Estado</th>
+                            <th>Modificar / Eliminar</th>
                         </tr>
                     </thead>
 
@@ -123,13 +122,13 @@
                             @if (listaReserva == null)
                             {
                                 <tr>
-                                    <td colspan="6">Buscando reservas, aguarde...</td>
+                                    <td>Buscando reservas, aguarde...</td>
                                 </tr>
                             }
                             else if (listaReserva.Count == 0)
                             {
                                 <tr>
-                                    <td colspan="6">No existen reservas realizadas</td>
+                                    <td>No existen reservas realizadas</td>
                                 </tr>
                             }
                             else
@@ -138,14 +137,14 @@
                                 {
                                     <tr>
                                         
-                                        <td class="text-danger">@item.FechaHoraReserva</td>
-                                        <td class="text-danger">@item.DuracionAlquiler</td>
-                                        <td class="text-danger">@item.Monto</td>
-                                        <td class="text-danger">@item.MetodoPago</td>
-                                        <td class="text-danger">@item.EstadoReserva</td>
+                                        <td>@item.FechaHoraReserva</td>
+                                        <td>@item.DuracionAlquiler</td>
+                                        <td>@item.Monto</td>
+                                        <td>@item.MetodoPago</td>
+                                        <td>@item.EstadoReserva</td>
                                         
-                                        <td class="d-flex align-items-center justify-content-between">
-                                            <a class="btn btn-outline-warning btn-sm mb-2" href="/Api/Reservas/Editar/@item.Id">Modificar</a>
+                                        <td>
+                                            <a href="/Api/Reservas/Editar/@item.Id">Modificar</a>
                                             <button class="btn btn-danger btn-sm mb-2" @onclick="()=>Eliminar(item)">Eliminar</button>
                                         </td>
                                     
@@ -164,23 +163,23 @@
         
             </div>
 
-            <div class="container text-center my-5">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="impact-text neon-text text-uppercase">La gran 7 - Complejo deportivo</h2>
+            <div>
+                <div>
+                    <div>
+                        <h2>La gran 7 - Complejo deportivo</h2>
                     </div>
-                    <div class="col">
-                        <h2 class="impact-text neon-text text-uppercase">La gran 7  - Complejo deportivo</h2>
+                    <div>
+                        <h2>La gran 7  - Complejo deportivo</h2>
                     </div>
-                    <div class="col">
-                        <h2 class="impact-text neon-text text-uppercase">La gran 7 - Complejo deportivo</h2>
+                    <div>
+                        <h2>La gran 7 - Complejo deportivo</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="container mt-5">
+            <div>
                 
-                <div class="modal-dialog-centered">
+                <div>
                 
                     <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
                         <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
@@ -199,8 +198,8 @@
         </main>
         
        
-        <footer class="bg-dark text-white text-center py-3 mt-5">
-            <p class="font-monospace mb-0">Todos los derechos reservados</p>
+        <footer >
+            <p>Todos los derechos reservados</p>
         </footer>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

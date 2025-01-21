@@ -1,0 +1,179 @@
+﻿@page "/Api/ListReserva/Crear"
+@inject IHTTPServicio http
+@inject NavigationManager navigationManager
+
+@using System.ComponentModel.DataAnnotations 
+@inject IJSRuntime JSRuntime
+
+
+    
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+        <head>
+            <title>Lista de reservas</title>
+
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+           
+        
+        </head>
+        
+        
+        <body>
+
+            <header>
+
+                @* <h1 class="text-cente+r border-danger border border-0">Reservá tu lugar, completando los campos</h1> *@
+
+                <div>
+                    <h1>Reservá tu lugar</h1>
+                    <div>
+                        <p>
+                            Complejo deportivo la gran 7
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                @* <h3 >Completá con los datos requeridos para realizar la reserva</h3> *@
+
+            </header>
+
+            <main>
+
+                <EditForm Model="reserva" OnValidSubmit="Grabar">
+                    <DataAnnotationsValidator />
+
+                 
+
+                    <div>
+                        
+                        <div>
+                            
+                            <div>
+                                
+                                <div>
+                                    
+                                    <div>
+                                        <h3>Reservá tu lugar</h3>
+                                        <p>Completando los campos</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="form-group">
+                                            <label>Fecha/Hora Reserva</label>
+                                            <div>
+                                                <input class="form-control" @bind-value="@reserva.FechaHoraReserva" />
+                                                <ValidationMessage For="@(() => reserva.FechaHoraReserva)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Duración del Alquiler -->
+                                        <div class="form-group">
+                                            <label>Tiempo de alquiler (Hs)</label>
+                                            <div>
+                                                <input class="form-control" @bind-value="@reserva.DuracionAlquiler" />
+                                                <ValidationMessage For="@(() => reserva.DuracionAlquiler)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Monto o Precio -->
+                                        <div class="form-group">
+                                            <label>Precio por alquiler</label>
+                                            <div>
+                                                <input class="form-control" @bind-value="@reserva.Monto" />
+                                                <ValidationMessage For="@(() => reserva.Monto)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Método Pago -->
+                                        <div class="form-group">
+                                            <label>Método Pago</label>
+                                            <div>
+                                                <input class="form-control" @bind-value="@reserva.MetodoPago" />
+                                                <ValidationMessage For="@(() => reserva.MetodoPago)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Estado de la Reserva -->
+                                        <div class="form-group">
+                                            <label>Estado</label>
+                                            <div>
+                                                <input class="form-control" @bind-value="@reserva.EstadoReserva" />
+                                                <ValidationMessage For="@(() => reserva.EstadoReserva)" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Botón de Reservar -->
+                                        <div>
+                                            <button class="btn btn-primary"  type="submit">
+                                                Reservar ahora
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    @* boton de reserva, prueba de modificacón, (NO me gusta !!) *@
+
+                   @*  <div class="text-center mt-4 d-flex justify-content-center align-items-center">
+                        <button class="btn btn-lg btn-success bg-gradient w-50 text-uppercase fs-5 fw-bold text-white shadow-lg border-0 rounded-pill" type="submit">
+                            Reservar ahora
+                        </button>
+                    </div> *@
+                            
+
+                </EditForm>
+
+            </main>
+
+            <footer>
+                <p class="text-center">Todos los derechos reservados</p>
+            </footer>
+
+             <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        </body>
+
+    </html>
+
+              
+
+@code {
+
+    private Reserva reserva = new Reserva();
+
+    private async Task Grabar()
+    {
+        var httpRespuesta = await http.Post<Reserva>("Api/Reservas", reserva);
+
+        if (httpRespuesta.Error)
+        {
+            var body = httpRespuesta.HttpResponseMessage;
+        }
+        navigationManager.NavigateTo("/Api/Reservas");
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Api/Reservas");
+    }
+
+   
+
+
+}
+            
+
+
+
+
+     
+
