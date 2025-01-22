@@ -9,8 +9,8 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
 {
     //Repositorio_ es una clase especializada en hacer un CRUD sobre una tabla cualquiera de la base de datos
     //<E> => (Entidad)
-    public class Repositorio<E> : IRepositorio<E> where E : class, IEntityBase
-
+    public class Repositorio<E> : IRepositorio<E> 
+        where E : class, IEntityBase
     {
         //crud del repositorio
         //Método privado (de solo lectura)
@@ -38,8 +38,6 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
         {
             try
             {
-
-
                 await context.Set<E>().AddAsync(entidad);
                 await context.SaveChangesAsync(); //espera y guarda los cambios del context
                 return entidad.Id; //Id de la entidad 
@@ -132,8 +130,10 @@ namespace Proyecto_LaGranSiete.Server.Repositorio
             return existe;
         }
         #endregion
+
     }
 }
+
           
 
 

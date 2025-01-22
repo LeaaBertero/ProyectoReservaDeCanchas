@@ -20,7 +20,7 @@ namespace Proyecto_LaGranSiete.Client.Servicios
         }
         #endregion
 
-
+        #region httpRespuesta <T> (Entidad - Get)
         public async Task<HTTPRespuesta<T>> Get<T>(string url)
         {
             var response = await http.GetAsync(url);
@@ -35,7 +35,9 @@ namespace Proyecto_LaGranSiete.Client.Servicios
                 return new HTTPRespuesta<T>(default, true, response);
             }
         }
+        #endregion
 
+        #region httpRespuesta <object> (Entidad - Post)
         public async Task<HTTPRespuesta<object>> Post<T>(string url, T entidad)
         {
             var enviarJson = JsonSerializer.Serialize(entidad);
@@ -55,8 +57,10 @@ namespace Proyecto_LaGranSiete.Client.Servicios
                 return new HTTPRespuesta<object>(default, true, response);
             }
         }
+        #endregion
 
         //Servicio Put (Copiado) del método Post
+        #region httpRespuesta <object> (Entidad - Put)
         public async Task<HTTPRespuesta<object>> Put<T>(string url, T entidad)
         {
             var enviarJson = JsonSerializer.Serialize(entidad);
@@ -76,14 +80,17 @@ namespace Proyecto_LaGranSiete.Client.Servicios
                 return new HTTPRespuesta<object>(default, true, response);
             }
         }
+        #endregion
 
+        #region httpRespuesta <object> (Entidad - Delete)
         public async Task<HTTPRespuesta<object>> Delete(string url) 
         {
             var respuesta = await http.DeleteAsync(url);
             return new HTTPRespuesta<object>(null, !respuesta.IsSuccessStatusCode, respuesta);
         }
+        #endregion
 
-
+        #region DesSerializar
         private async Task<T?> DesSerializar<T>(HttpResponseMessage response)
         {
             var respuestaStr = await response.Content.ReadAsStringAsync();
@@ -91,6 +98,7 @@ namespace Proyecto_LaGranSiete.Client.Servicios
             return JsonSerializer.Deserialize<T>(respuestaStr,
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
+        #endregion
 
     }
 }

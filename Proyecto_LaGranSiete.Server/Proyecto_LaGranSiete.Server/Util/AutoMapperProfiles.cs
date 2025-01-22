@@ -9,7 +9,7 @@ namespace Proyecto_LaGranSiete.Server.Util
     public class AutoMapperProfiles : Profile
     {
         //constructor AutoMapper
-        protected AutoMapperProfiles()
+        public AutoMapperProfiles()
         {
 
             //Data Transfer Objetct (Objeto de transferencia de datos)

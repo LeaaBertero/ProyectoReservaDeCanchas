@@ -18,7 +18,7 @@ namespace Proyecto_LaGranSiete.Shared.DTO
         public string? Apellido { get; set; }
 
         [Required(ErrorMessage = "La fecha Nacimiento, es obligatoria")]
-        [MaxLength(30, ErrorMessage = "Máximo número de caracteres {1}")]
+       
         public DateTime FechaNacimiento { get; set; }
 
         [Required(ErrorMessage = "El campo teléfono, es obligatorio")]

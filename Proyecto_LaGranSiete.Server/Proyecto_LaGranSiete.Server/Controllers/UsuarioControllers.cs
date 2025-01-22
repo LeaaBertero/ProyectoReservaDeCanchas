@@ -14,16 +14,17 @@ namespace Proyecto_LaGranSiete.Server.Controllers
 
     public class UsuarioControllers : ControllerBase
     {
+        private readonly IUsuarioRepositorio repositorio;
+        
         #region Campo context
-        private readonly Context context;
         private readonly IMapper mapper;
         #endregion
 
         #region Constructor
-        public UsuarioControllers(Context context,
-                                  IMapper mapper)      
+        public UsuarioControllers(IUsuarioRepositorio repositorio,
+                                  IMapper mapper)
         {
-            this.context = context;
+            this.repositorio = repositorio;
             this.mapper = mapper;
         }
         #endregion
@@ -32,7 +33,7 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get()
         {
-            return await context.Usuarios.ToListAsync();
+            return await repositorio.Select();
         }
         #endregion
 
@@ -40,15 +41,15 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Usuario>> Get(int id)
         {
-            var lean = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+            var lean = await repositorio.SelectById(id);
 
             if (lean == null)
             {
                 return NotFound();
             }
-            return Ok(lean);
+            return lean;
 
-            //return lean;
+
         }
         #endregion
 
@@ -58,20 +59,9 @@ namespace Proyecto_LaGranSiete.Server.Controllers
         {
             try
             {
-                //Usuario entidad = new Usuario();
+                Usuario entidad = mapper.Map<Usuario>(entidadDTO);
+                return await repositorio.Insert(entidad);
 
-                //entidad.Nombre = entidadDTO.Nombre;
-                //entidad.Apellido = entidadDTO.Apellido;
-                //entidad.FechaNacimiento = entidadDTO.FechaNacimiento;
-                //entidad.Telefono = entidadDTO.Telefono?.ToString();
-                //entidad.CorreoElectronico = entidadDTO.CorreoElectronico;
-                //entidad.Parentesco = entidadDTO.Parentesco;
-
-                var entidad = mapper.Map<Usuario>(entidadDTO);
-
-                context.Usuarios.Add(entidad);
-                await context.SaveChangesAsync();
-                return entidad.Id;
             }
             catch (Exception err)
             {
@@ -80,66 +70,13 @@ namespace Proyecto_LaGranSiete.Server.Controllers
             }
         }
         #endregion
-
-
-
-        //[HttpPut("{id:int}")]
-        //public async Task<ActionResult> Put(int id,[FromBody] Usuario entidad) 
-        //{
-        //    if (id != entidad.Id)
-        //    {
-        //        return BadRequest("Datos incorrectos");
-        //    }
-
-        //    var lean = await context.Usuarios.Where(e=> entidad.Id==id).FirstOrDefaultAsync();
-
-        //    if (lean == null)
-        //    {
-        //        return NotFound("No existe el usuario buscado");
-        //    }
-
-        //    lean.Nombre = entidad.Nombre;
-        //    lean.Apellido = entidad.Apellido;
-        //    lean.FechaNacimiento = entidad.FechaNacimiento;
-        //    lean.Telefono = entidad.Telefono;
-        //    lean.CorreoElectronico = entidad.CorreoElectronico;
-        //    lean.Parentesco = entidad.Parentesco;
-
-        //    try
-        //    {
-        //        context.Usuarios.Update(lean);
-        //        await context.SaveChangesAsync();
-        //    }
-        //    catch (Exception err)
-        //    {
-
-        //        return BadRequest(err.Message);
-        //    }
-
-
-        //    return Ok();
-        //}
-
-        //[HttpDelete("{id:int}")]
-        //public async Task<ActionResult> Delete(int id) 
-        //{
-        //    var existe = await context.Usuarios.AnyAsync(x =>x.Id == id);
-
-        //    if (!existe)
-        //    {
-        //        return NotFound($"El usuario {id} que se intenta borrar, no existe.");
-        //    }
-
-        //    Usuario entidadBorrar = new Usuario();
-        //    entidadBorrar.Id = id;  
-
-        //    context.Remove(entidadBorrar);
-        //    await context.SaveChangesAsync();
-        //    return Ok();
-
-        //}
     }
 }
+
+
+
+
+       
 
 
 
