@@ -32,6 +32,7 @@ builder.Services.AddDbContext<Context>(op => op.UseSqlServer("name=conn"));
 
 
 
+
 //AutoMapper (construyendo el objeto)
 IServiceCollection serviceCollection = builder.Services.AddAutoMapper(typeof(Program));
 
