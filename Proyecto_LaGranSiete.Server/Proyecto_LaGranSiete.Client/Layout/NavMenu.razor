@@ -8,101 +8,35 @@
 </div> *@
 
 <!DOCTYPE html>
-    <html>
-    <head>
-        <title>menú de navegancion</title>
-    </head>
-    <body>
-        <header>
-            <div class="contenedor-titulo">
-                <h1>contenedor del nav-menu</h1>
-                
-            </div>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+   
+    <link href="./css/NavMenu.css" rel="stylesheet" />
 
-
-        </header>
-        
-        <main>
-
-       
-
-        <div>
-            <nav class="flex-column bg-dark p-4 rounded shadow" style="width: 250px; overflow-y: auto; height: 100vh;">
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/" Match="NavLinkMatch.All" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-house-door-fill" aria-hidden="true"></span>
-                        <span class="ms-3">Página principal</span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Usuario" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Usuarios</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Reservas" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-calendar-check-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Reservas</strong></span>
-                    </NavLink>
-                </div>
-
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Equipo1" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Equipo 1</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Equipo2" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Equipo 2</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Cancha" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Cancha</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Pago" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Pagos</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Partido" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Partido</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="/Api/Equipo" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-people-fill" aria-hidden="true"></span>
-                        <span class="ms-3"><strong>Equipo</strong></span>
-                    </NavLink>
-                </div>
-                <div class="nav-item py-3">
-                    <NavLink class="nav-link text-light d-flex align-items-center" href="https://localhost:7178/swagger" target="_blank" style="border-bottom: 2px solid #00ff00;">
-                        <span class="bi bi-code-slash" aria-hidden="true"></span>
-                        <span class="ms-3">Swagger</span>
-                    </NavLink>
-                </div>
-            </nav>
-            <div class="section-content" style="margin-left: 260px;">
-                <!-- Aquí va el contenido de la sección que deseas mostrar -->
-            </div>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#home">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/servicios">Servicios</a>
+            <a href="/contacto">Contacto</a>
         </div>
+    </header>
 
-        </main>
-        
-        <footer>
-           <span>menú de navegación</span>
-        </footer>
-    
-    </body>
-    </html>
+    <main>
+        <h1>Página Principal</h1>
+        <p>Bienvenido a nuestra página principal.</p>
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
 
 
 

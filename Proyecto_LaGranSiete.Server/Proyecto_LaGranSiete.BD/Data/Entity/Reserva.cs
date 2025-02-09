@@ -18,7 +18,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
     public class Reserva : EntityBase
     {
-        #region Entidad reserva
+        #region clave primaria de la tabla reserva
         //Clave primaria de la tabla Reservas
         [JsonIgnore] /*Para excluir la clave foranea del json*/
         public int? ReservaId { get; set; }
