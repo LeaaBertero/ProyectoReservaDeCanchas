@@ -11,48 +11,18 @@
 <body>
 
     <header>
-        <h1 class="text-center">Lista de usuarios</h1>
+        <h1 class="text-center">Hacete usuario de nuestra web !!</h1>
+        <h2 class="text-center">Completá el formulario con tu datos !</h2>
        
     </header>
 
     <main>
 
-        <table>
-
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Fecha de nacimiento</th>
-                <th>Teléfono</th>
-                <th>Correo Electrónico</th>
-                @* <th>Parentesco</th> *@
-
-            </tr>
-
-            @if (listaUsuarios == null)
-            {
-                <p>Buscando...</p>
-            }
-            else 
-            {
-                @foreach (var item in listaUsuarios) 
-                {
-                    <tr>
-                        <td>@item.Nombre</td>
-                        <td>@item.Apellido</td>
-                        <td>@item.FechaNacimiento</td>
-                        <td>@item.Telefono</td>
-                        <td>@item.CorreoElectronico</td>
-                        @* <td>@item.Parentesco</td> *@
-
-                    </tr>
-                }
-            }
-
-        </table>
+      @* acá va un formulario de acceso como usuario para los usuarios de la pagina *@
+       
 
 
-
+       
 
 
     </main>
@@ -65,31 +35,20 @@
 </html>
 
 @code {
-    List<Usuario> listaUsuarios;
-    string Mensaje = "";
+   
+   
 
-    //asynk / Await (Hakuna matara  - La canción )
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-        await Leer();
-    }
+    
+  
 
-    private async Task Leer() 
-    {
-        var resp = await http.Get<List<Usuario>>("Api/Usuario");
+  
 
-        if (!resp.Error)
-        {
-            listaUsuarios = resp.Respuesta;
-        }
-        else 
-        {
-            Mensaje = "Error";
-        }
 
+    
+
+  
         
-    }
+   
 }
        
 

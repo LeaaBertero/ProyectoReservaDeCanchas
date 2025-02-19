@@ -17,14 +17,15 @@
 
 <body>
 
-    <header>
-            <h1>Prédio futbolistico La Gran 7 Córdoba</h1>
+    <header class="text-center">
+            <h1 class="text-uppercase">lista de reservas</h1>
        
     </header>
 
     <main>
 
         <div>
+            <h2 class="text-center">Realizá tu reserva, vení a jugar con tus amigos !!</h2>
             <a class="btn btn-success" href="/Api/Reserva/Crear">֎ Reservá yá!! ֎ </a>
         </div>
 
@@ -86,7 +87,7 @@
                                     <td>@item.EstadoReserva</td>
 
                                     <td>
-                                        <a href="/Api/Reservas/Editar/ @item.Id">Modificar</a>
+                                        <a href="/Api/Reservas/Editar/@item.Id">Modificar</a>
                                     </td>
 
                                     <td>
@@ -112,23 +113,23 @@
 
       
 
-        <div>
+      
 
-            <div>
+          
 
-                <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
-                    <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
-                        <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
-                        @* <div class="d-flex justify-content-around">
-                                <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
-                                <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
-                            </div> *@
-                    </div>
-                </Confirmacion>
+            <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
+                <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
+                    <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
+                    @* <div class="d-flex justify-content-around">
+                            <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                            <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
+                        </div> *@
+                </div>
+            </Confirmacion>
 
-            </div>
+          
 
-        </div>
+       
 
     </main>
 
