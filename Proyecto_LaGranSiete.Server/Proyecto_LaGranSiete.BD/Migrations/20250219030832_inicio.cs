@@ -22,12 +22,17 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                     Apellido = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Telefono = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CorreoElectronico = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
-                    Parentesco = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    CorreoElectronico = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Usuarios_Usuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -360,6 +365,11 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 column: "UsuarioId",
                 unique: true,
                 filter: "[UsuarioId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_UsuarioId",
+                table: "Usuarios",
+                column: "UsuarioId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Canchas_Reservas_ReservaId",

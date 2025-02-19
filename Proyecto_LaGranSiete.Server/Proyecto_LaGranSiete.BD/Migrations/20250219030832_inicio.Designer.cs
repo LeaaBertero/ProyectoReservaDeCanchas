@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250122025202_inicio")]
+    [Migration("20250219030832_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -330,11 +330,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Parentesco")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Telefono")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -344,6 +339,8 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Usuarios");
                 });
@@ -453,6 +450,15 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasForeignKey("ReservaId");
                 });
 
+            modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", b =>
+                {
+                    b.HasOne("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", null)
+                        .WithMany("Usuarios")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.EquipoDos", b =>
                 {
                     b.Navigation("Pagos");
@@ -470,6 +476,11 @@ namespace Proyecto_LaGranSiete.BD.Migrations
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Reserva", b =>
                 {
                     b.Navigation("Reservas");
+                });
+
+            modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", b =>
+                {
+                    b.Navigation("Usuarios");
                 });
 #pragma warning restore 612, 618
         }

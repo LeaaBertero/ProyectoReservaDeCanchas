@@ -11,8 +11,8 @@
 <body>
 
     <header>
-        <h1>Lista de usuarios</h1>
-        <h3>Lista de usuarios</h3>
+        <h1 class="text-center">Lista de usuarios</h1>
+       
     </header>
 
     <main>
@@ -25,7 +25,7 @@
                 <th>Fecha de nacimiento</th>
                 <th>Teléfono</th>
                 <th>Correo Electrónico</th>
-                <th>Parentesco</th>
+                @* <th>Parentesco</th> *@
 
             </tr>
 
@@ -43,13 +43,15 @@
                         <td>@item.FechaNacimiento</td>
                         <td>@item.Telefono</td>
                         <td>@item.CorreoElectronico</td>
-                        <td>@item.Parentesco</td>
+                        @* <td>@item.Parentesco</td> *@
 
                     </tr>
                 }
             }
 
         </table>
+
+
 
 
 

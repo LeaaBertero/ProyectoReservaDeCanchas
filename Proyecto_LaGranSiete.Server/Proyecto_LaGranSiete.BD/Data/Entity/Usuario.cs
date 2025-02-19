@@ -43,11 +43,11 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         [MaxLength(80, ErrorMessage = "Máximo número de caracteres {1}")]
         public string CorreoElectronico { get; set; }
 
-        [Required(ErrorMessage = "El prentesco, es obligatorio")]
-        [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
-        public string Parentesco { get; set; }
+        //[Required(ErrorMessage = "El prentesco, es obligatorio")]
+        //[MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
+        //public string Parentesco { get; set; }
 
-        //public List<Usuario> Usuarios { get; set; } 
+        public List<Usuario> Usuarios { get; set; }
         #endregion
     }
 }

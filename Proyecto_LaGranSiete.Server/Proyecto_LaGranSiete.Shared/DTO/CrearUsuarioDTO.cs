@@ -29,9 +29,9 @@ namespace Proyecto_LaGranSiete.Shared.DTO
         [MaxLength(150, ErrorMessage = "Máximo número de caracteres {1}")]
         public string? CorreoElectronico { get; set; }
 
-        [Required(ErrorMessage = "El campo prentesco, es obligatorio")]
-        [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
-        public string? Parentesco { get; set; }
+        //[Required(ErrorMessage = "El campo prentesco, es obligatorio")]
+        //[MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
+        //public string? Parentesco { get; set; }
 
     }
 }
