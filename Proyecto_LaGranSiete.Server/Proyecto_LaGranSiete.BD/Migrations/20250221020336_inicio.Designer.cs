@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250219030832_inicio")]
+    [Migration("20250221020336_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -317,6 +317,11 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("Contrasenia")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("CorreoElectronico")
                         .IsRequired()
                         .HasMaxLength(80)
@@ -330,7 +335,7 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Telefono")
+                    b.Property<string>("NombreUsuario")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");

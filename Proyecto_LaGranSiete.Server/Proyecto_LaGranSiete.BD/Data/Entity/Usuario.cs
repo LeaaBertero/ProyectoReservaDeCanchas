@@ -33,11 +33,19 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
 
         [Required(ErrorMessage = "La fecha y hora, es obligatoria")]
         public DateTime FechaNacimiento { get; set; }
-       
 
-        [Required(ErrorMessage = "El teléfono, es obligatorio")]
+
+        //[Required(ErrorMessage = "El teléfono, es obligatorio")]
+        //[MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
+        //public string? Telefono { get; set; } 
+
+        [Required(ErrorMessage = "El nombre de usuario, es obligatorio")]
         [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
-        public string? Telefono { get; set; } //Telefono
+        public string? NombreUsuario { get; set; } //Telefono
+
+        [Required(ErrorMessage = "La contraseña, es obligatoria")]
+        [MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
+        public string? Contrasenia { get; set; } //Telefono
 
         [Required(ErrorMessage = "El e-mail, es obligatorio")]
         [MaxLength(80, ErrorMessage = "Máximo número de caracteres {1}")]
