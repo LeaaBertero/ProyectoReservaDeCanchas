@@ -12,7 +12,7 @@ using Proyecto_LaGranSiete.BD.Data;
 namespace Proyecto_LaGranSiete.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250221020336_inicio")]
+    [Migration("20250221020642_inicio")]
     partial class inicio
     {
         /// <inheritdoc />
@@ -345,8 +345,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
-
                     b.ToTable("Usuarios");
                 });
 
@@ -455,15 +453,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                         .HasForeignKey("ReservaId");
                 });
 
-            modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", b =>
-                {
-                    b.HasOne("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", null)
-                        .WithMany("Usuarios")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.EquipoDos", b =>
                 {
                     b.Navigation("Pagos");
@@ -481,11 +470,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
             modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Reserva", b =>
                 {
                     b.Navigation("Reservas");
-                });
-
-            modelBuilder.Entity("Proyecto_LaGranSiete.BD.Data.Entity.Usuario", b =>
-                {
-                    b.Navigation("Usuarios");
                 });
 #pragma warning restore 612, 618
         }

@@ -28,12 +28,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Usuarios_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -366,11 +360,6 @@ namespace Proyecto_LaGranSiete.BD.Migrations
                 column: "UsuarioId",
                 unique: true,
                 filter: "[UsuarioId] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Usuarios_UsuarioId",
-                table: "Usuarios",
-                column: "UsuarioId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Canchas_Reservas_ReservaId",

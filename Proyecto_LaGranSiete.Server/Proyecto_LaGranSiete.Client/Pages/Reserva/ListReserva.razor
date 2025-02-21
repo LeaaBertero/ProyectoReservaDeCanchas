@@ -19,6 +19,24 @@
 
     <header class="text-center">
             <h1 class="text-uppercase">lista de reservas</h1>
+
+        <div class="bg-danger">
+
+            <nav class="navegacion-principal">
+
+                @* <a href="/">Inicio</a> *@
+                <a href="/Api/Usuario">Usuarios</a>
+                <a href="/Api/Reservas">Reservas</a>
+                <a href="/Api/Partido">Partidos</a>
+                <a href="/Api/Pago">Pagos</a>
+                <a href="/Api/Equipo1">Equipo 1</a>
+                <a href="/Api/Equipo2">Equipo 2</a>
+                <a href="/Api/Equipo">Equipo</a>
+                <a href="/Api/Cancha">Cancha</a>
+
+            </nav>
+
+        </div>
        
     </header>
 
@@ -26,7 +44,7 @@
 
         <div>
             <h2 class="text-center">Realizá tu reserva, vení a jugar con tus amigos !!</h2>
-            <a class="btn btn-success" href="/Api/Reserva/Crear">֎ Reservá yá!! ֎ </a>
+            <a class="btn btn-success text-uppercase" href="/Api/Reserva/Crear">֎ Formulario de reservas ֎ </a>
         </div>
 
 
@@ -65,13 +83,13 @@
                         @if (listaReserva == null)
                         {
                             <tr>
-                                <td>Buscando reservas, aguarde...</td>
+                                <td>Buscandonlista de reservas, aguarde...</td>
                             </tr>
                         }
                         else if (listaReserva.Count == 0)
                         {
                             <tr>
-                                <td>No existen reservas realizadas</td>
+                                <td>No existen reservas activas</td>
                             </tr>
                         }
                         else
@@ -119,11 +137,11 @@
 
             <Confirmacion @ref="eliminar" onCancel="Cancelar" onConfirm="Borrar">
                 <div class="alert alert-danger text-center text-uppercase font-monospace rounded shadow p-3">
-                    <h5 class="mb-3">Está por borrar la reserva, ¿desea continuar?</h5>
-                    @* <div class="d-flex justify-content-around">
-                            <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
-                            <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
-                        </div> *@
+                <h5 class="mb-3">Borrar la reserva realizada?</h5>
+                   @*  <div class="d-flex justify-content-around">
+                        <button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+                        <button class="btn btn-danger" @onclick="Borrar">Borrar</button>
+                     </div> *@
                 </div>
             </Confirmacion>
 

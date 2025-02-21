@@ -55,7 +55,7 @@ namespace Proyecto_LaGranSiete.BD.Data.Entity
         //[MaxLength(50, ErrorMessage = "Máximo número de caracteres {1}")]
         //public string Parentesco { get; set; }
 
-        public List<Usuario> Usuarios { get; set; }
+        //public List<Usuario> Usuarios { get; set; }
         #endregion
     }
 }
